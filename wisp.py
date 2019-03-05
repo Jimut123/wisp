@@ -48,7 +48,7 @@ class guiProj:
             master.columnconfigure(i, pad=3)    
             master.rowconfigure(i, pad=3)
         self.master = master
-        master.title("Jimut's Preference Finder App")
+        master.title("WISP")
         # probably the do-able geometry
         master.geometry("350x600")
 
