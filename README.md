@@ -13,7 +13,9 @@
 
 #### Make sure to keep the secrets as a different folder as secrets.dat or something like that which can be opened in notepad
 
-#### make the version no. for -h and -V with additional uses parameter
+#### make the version no. for -h and -V with additional uses parameter add arguments to program
+
+#### Add this (time.time) running wisp at this terminal ...
 
 #### Document this fully!
 
