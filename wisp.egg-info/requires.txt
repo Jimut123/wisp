@@ -1,0 +1,8 @@
+requests
+IPython
+pandas
+folium
+geopy
+numpy
+wget
+pip

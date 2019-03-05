@@ -17,7 +17,7 @@ if __name__ == '__main__':
         platforms = 'Linux',
         py_modules = ['wisp'],
         entry_points = {
-            'console_scripts': ['wisp = wisps:main'],
+            'console_scripts': ['wisp = wisp:main'],
         },
         include_package_data = True,
         install_requires = [
