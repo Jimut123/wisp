@@ -22,12 +22,13 @@ if __name__ == '__main__':
         include_package_data = True,
         install_requires = [
             'requests',
+            'datetime',
             'IPython',
-	    'pandas',
-	    'folium',
-	    'geopy',     
-	    'numpy',
-	    'wget',
+            'pandas',
+            'folium',
+            'geopy',     
+            'numpy',
+            'wget',
             'pip'
         ],
         keywords = 'Preference, location, wisp, requests, html, json, numpy, pandas, software, tkinter, folium, geopy, lat lon, wget, Ipython, location cluster, KNN, Machine learning, clustering',

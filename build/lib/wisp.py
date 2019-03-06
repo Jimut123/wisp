@@ -13,10 +13,11 @@
 #   e-mail : jimutbahanpal@yahoo.com
 #   
 #   Created for the purpose of final year project! :=> Almost data visualization project!
-#
+#   http://www.tayloredmktg.com/rgb/ for selecting and customising this s/w
 #   Dated : 10-02-2019
 """
-__version__ = "0.0.1-beta"
+
+__version__ = "0.0.2-beta"
 __author__ = "Jimut Bahan Pal <jimutbahanpal@yahoo.com>"
 
 from tkinter import Tk, Label, Button, Entry, StringVar, DISABLED, NORMAL, END, W, E, N, S
@@ -28,7 +29,9 @@ from tempfile import NamedTemporaryFile
 from geopy.geocoders import Nominatim # module to convert an address into latitude and longitude values
 from IPython.core.display import HTML 
 from IPython.display import Image
+from datetime import datetime
 from tkinter import *
+import tkinter as tk
 import pandas as pd # library for data analsysis
 import numpy as np # library to handle data in a vectorized manner
 import subprocess
@@ -37,11 +40,75 @@ import requests # library to handle requests
 import random # library for random number generation
 import folium # plotting library
 
-print('Folium installed')
-print('Libraries imported.')
+
+
+# print('Folium installed')
+# print('Libraries imported.')
+print('Starting application ... Necessary libraries imported.')
+
+"""
+# defining JIMUT's classic colors : 
+color_bg_app = "#ffff00"
+color_msg = "#ffd700"
+color_entry_default = "#ffffff"
+color_use_def_sec_button = "#daa520"
+color_submit_button = "#b8860b"
+color_preference_label = "#f0e68c"
+color_preference_canvas = "#ffff00"
+color_preference_entry = "#ffffff"
+color_show_map_button = "#8b4513"
+color_pref_scrollbar = "#ffffe0"
+
+"""
+
+# defining JIMUT's classic colors : 
+color_bg_app = "#ffd700"
+color_msg = "#ffd700"
+color_entry_default = "#ffffff"
+color_use_def_sec_button = "#ffff00"
+color_submit_button = "#ffff00"
+color_preference_label = "#ffd700"
+color_preference_canvas = "#ffd700"
+color_preference_entry = "#ffffff"
+color_show_map_button = "#ffff00"
+color_pref_scrollbar = "#8b4513"
+
+
+
 def_sec_dummy = 0
+
+# utils function for CLI
+def time_now():
+    format = "1;32;40"
+    s1 = ''
+    time_stmp = datetime.now().isoformat(timespec='seconds')
+    s1 += '\x1b[%sm %s \x1b[0m' % (format, time_stmp)
+    print("running app : {} ".format(s1),end="")
+
+
+
+def banner_wisp():
+    format = "1;33;40"
+    s1 = ''
+    
+    banner = """
+██╗    ██╗██╗███████╗██████╗       
+██║    ██║██║██╔════╝██╔══██╗       
+██║ █╗ ██║██║███████╗██████╔╝        
+██║███╗██║██║╚════██║██╔═══╝       
+╚███╔███╔╝██║███████║██║                 
+ ╚══╝╚══╝ ╚═╝╚══════╝╚═╝  	0.0.1-beta 
+				JIMUT(TM)  
+        """
+    s1 += '\x1b[%sm %s \x1b[0m' % (format, banner)
+    print(s1)
+    
+
+
+
 class guiProj:
     def __init__(self, master):
+        banner_wisp()
         # the constructor for creating the GUI of the app using tkinter!
         # this is creating the padding for the input/label text etc.
         for i in range(100):
@@ -50,10 +117,10 @@ class guiProj:
         self.master = master
         master.title("WISP")
         # probably the do-able geometry
-        master.geometry("350x600")
+        master.geometry("445x390")
 
         # Shortened version of the code!
-        msg_s = ["CLIENT ID","FOURSQUARE SECRET","LOC/CITY","RADIUS (in meters)","NO. OF PREFERENCE"]
+        msg_s = ["    CLIENT ID    ","    FOURSQUARE SECRET    ","    LOC/CITY    ","    RADIUS (in meters)    ","    NO. OF PREFERENCE    "]
         i_var = 0
 
         # just initializing!
@@ -67,11 +134,11 @@ class guiProj:
             self.msg_list[i_var] = msg
             self.text_list[i_var] = StringVar()
             self.text_list[i_var].set("{}".format(self.msg_list[i_var]))
-            self.label_list[i_var] = Label(master, textvariable=self.text_list[i_var])
+            self.label_list[i_var] = Label(master, textvariable=self.text_list[i_var],background=color_msg)
             self.label_list[i_var].grid(row=i_var, column=0, columnspan=1, sticky=W+E)
 
-            self.entry_list[i_var] = Entry(master)
-            self.entry_list[i_var].grid(row=i_var, column=1, columnspan=4, sticky=W+E)
+            self.entry_list[i_var] = Entry(master,background=color_entry_default)
+            self.entry_list[i_var].grid(row=i_var, column=1, columnspan=1, sticky=W+E)
             
             i_var += 1
         
@@ -81,52 +148,81 @@ class guiProj:
             # dummy preference for conditional check later
             if get_pref_no == "":
                 get_pref_no = 0
-            
             # initialising etc.
             self.entry_pref = [None]*int(get_pref_no)
             self.text_pref = [None]*int(get_pref_no)
             self.pf_text = [None]*int(get_pref_no)
             self.label_pref = [None]*int(get_pref_no)
+
+
+            def onFrameConfigure(canvas):
+                '''Reset the scroll region to encompass the inner frame'''
+                canvas.configure(scrollregion=canvas.bbox("all"))
             
-            # automating the boring and tedious stuffs through list
-            # basically, takes the input for the number of preferences!
-            for iter_ in range(int(get_pref_no)):
-                
-                text_str = "{}-{} :".format("preference",iter_+1)
-                
-                self.pf_text[iter_] = text_str
-                # creating the label
-                self.text_pref[iter_] = StringVar()
-                self.text_pref[iter_].set(self.pf_text[iter_])
-                self.label_pref[iter_] = Label(master, textvariable=self.text_pref[iter_])
-                self.label_pref[iter_].grid(row=5+iter_+1, column=0, columnspan=1, sticky=W+E)
+            def populate(frame):
+                '''Put in some fake data'''
+                # automating the boring and tedious stuffs through list
+                # basically, takes the input for the number of preferences!
+                for iter_ in range(int(get_pref_no)):
+                    
+                    text_str = "{}-{} :".format("preference",iter_+1)
+                    
+                    self.pf_text[iter_] = text_str
+                    # creating the label
+                    self.text_pref[iter_] = StringVar()
+                    self.text_pref[iter_].set(self.pf_text[iter_])
+                    self.label_pref[iter_] = Label(frame, textvariable=self.text_pref[iter_],background=color_preference_label)
+                    self.label_pref[iter_].grid(row=5+iter_+1, column=0, sticky=W+N)
 
-                # entry widget
-                self.entry_pref[iter_] = Entry(master)
-                self.entry_pref[iter_].grid(row=5+iter_+1, column=1, columnspan=4, sticky=W+E)
-
+                    # entry widget
+                    self.entry_pref[iter_] = Entry(frame,background=color_preference_entry)
+                    self.entry_pref[iter_].grid(row=5+iter_+1, column=1, sticky=W+N)
+                """
+                for row in range(100):
+                    tk.Label(frame, text="%s" % row, width=3, borderwidth="1", 
+                            relief="solid").grid(row=row, column=0)
+                    t="this is the second column for row %s" %row
+                    tk.Label(frame, text=t).grid(row=row, column=1)
+                    tk.Entry(frame).grid(row=row, column=2)
+                """
+            
+            canvas = tk.Canvas(master, borderwidth=0,background=color_preference_canvas)
+            
+            canvas.config(width=250, height=200)
+            
+            frame = tk.Frame(canvas)
+            vsb = tk.Scrollbar(master, orient="vertical", command=canvas.yview, background=color_pref_scrollbar)
+            canvas.configure(yscrollcommand=vsb.set)
+            # for the scrollbar
+            vsb.grid(row=8, column=2,rowspan=int(get_pref_no), sticky="nsw")
+            # for the grid
+            canvas.grid(row=8,column=0,rowspan=1,sticky="nsew")
+            canvas.create_window((4,4), window=frame, anchor="nw")
+            frame.bind("<Configure>", lambda event, canvas=canvas: onFrameConfigure(canvas))
+            populate(frame)
             # disabling the button! for one-time use!
             self.submit_pref_buttton.configure(state=DISABLED)
 
-            self.show_map_button = Button(master, text="show map",command=self.show_map)
-            self.show_map_button.grid(row=int(get_pref_no)+5+1,column=2,columnspan=6, sticky=W+E)
+            self.show_map_button = Button(master, text="show map",command=self.show_map,background=color_show_map_button)
+            self.show_map_button.grid(row=int(get_pref_no)+8,column=1,columnspan=1, sticky=W+E)
 
         def def_sec():
             # this function sets the default secrets!
 
             global def_sec_dummy
             def_sec_dummy = 1
+            time_now()
             print("USING DEFAULT SECRETS FOR CLIENT_ID and CLIENT_SECRET ")
             self.entry_list[0].insert(END, 'using default client ID')
             self.entry_list[1].insert(END, 'using default client secret')
             # disabling things! lol
             self.use_default_sec.configure(state=DISABLED)
         # place holder gets called when we use this! (default secret thingie)
-        self.use_default_sec = Button(master, text="use default secrets",command=def_sec)
-        self.use_default_sec.grid(row=5,column=0,columnspan=2, sticky=W+E)
+        self.use_default_sec = Button(master, text="use default secrets",command=def_sec,background=color_use_def_sec_button)
+        self.use_default_sec.grid(row=5,column=0, sticky=W+E)
         # again button thing
-        self.submit_pref_buttton = Button(master, text="submit",command=submit_pref)
-        self.submit_pref_buttton.grid(row=5,column=2,columnspan=6, sticky=W+E)
+        self.submit_pref_buttton = Button(master, text="submit",command=submit_pref,background=color_submit_button)
+        self.submit_pref_buttton.grid(row=5,column=1,columnspan=1, sticky=W+E)
     
     def show_map(self):
         # To get all the values and show the map!
@@ -158,29 +254,39 @@ class guiProj:
         VERSION = '20190122'
         LIMIT = 1000
         address = all_values[2]                                   #input("Enter the location/ city :")
-
+        time_now()
         print('Your credentails:')
+        time_now()
         print('CLIENT_ID: ' + CLIENT_ID)
+        time_now()
         print('CLIENT_SECRET:' + CLIENT_SECRET)
+        time_now()
         print('Location of your choice : ', address)
 
-        geolocator = Nominatim()
+        geolocator = Nominatim(timeout = 10)
         try:
             # get's the lat and long for a place, it is kept under try catch for safety purpose
             location = geolocator.geocode(address)
             latitude = location.latitude
             longitude = location.longitude
+            time_now()
             print(latitude, longitude)
         except:
-
-            print("CHECK INTERNET CONNECTION!")
+            time_now()
+            print("CHECK INTERNET CONNECTION!\n ELSE YOUR NET IS NOT IN FULL 3/4G")
             # directly closes the application
             exit(4)
 
         
         RADIUS = int(all_values[3])
 
+        time_now()
         print("Total preference list : ",pref_list)
+
+        # To clean the list if by chance someone has given unnecessary values or empty values or unused text entry box
+        pref_list = list(filter(None, pref_list))
+        time_now()
+        print("New pref list : ",pref_list)
 
         map_address = folium.Map(location=[latitude, longitude], zoom_start=11)
         marker_cluster = MarkerCluster().add_to(map_address)
@@ -188,6 +294,7 @@ class guiProj:
         for item_pref in pref_list:
             url = 'https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}&ll={},{}&v={}&query={}&radius={}&limit={}'.format(CLIENT_ID, CLIENT_SECRET, latitude, longitude, VERSION, item_pref, RADIUS, LIMIT)
             try :
+                time_now()
                 print("url : ",url)
                 results = requests.get(url).json()
                 # assign relevant part of JSON to venues
@@ -195,12 +302,14 @@ class guiProj:
 
                 # tranform venues into a dataframe
                 dataframe = json_normalize(venues)
+                time_now()
                 print(dataframe.head())
                 try:
                     # keep only columns that include venue name, and anything that is associated with location
                     filtered_columns = ['name', 'categories'] + [col for col in dataframe.columns if col.startswith('location.')] + ['id']
                     dataframe_filtered = dataframe.loc[:, filtered_columns]
                 except:
+                    time_now()
                     print("Something went wrong!")
                     continue
                 # function that extracts the category of the venue
@@ -219,6 +328,7 @@ class guiProj:
                 try:
                     dataframe_filtered['categories'] = dataframe_filtered.apply(get_category_type, axis=1)
                 except:
+                    time_now()
                     print("Something went wrong!")
                     continue
 
@@ -232,7 +342,9 @@ class guiProj:
                 data_frame = dataframe_filtered.copy()
                 list_df.append(data_frame)
             except:
+                time_now()
                 print("Preference : ",item_pref," doesn't exists!!!")
+        time_now()
         print(list_df)
         # create map latitude and longitude values
         MAP_FINAL = folium.Map(location=[latitude, longitude], zoom_start=11)
@@ -296,6 +408,7 @@ class guiProj:
             page_content_type = page_content_type
 
             # kill a process, hosted on a localhost:PORT
+            time_now()
             subprocess.call(['fuser', '-k', '{0}/tcp'.format(PORT)])
 
             # Started creating a temprorary http server.
@@ -338,8 +451,9 @@ class guiProj:
 
 def main():
     root = Tk()
+    root.configure(background=color_bg_app)
     # initialising the app
-    my_gui = guiProj(root)
+    guiProj(root)
     # goes on and on loop for tkinter!
     root.mainloop()
 

@@ -29,7 +29,6 @@ from tempfile import NamedTemporaryFile
 from geopy.geocoders import Nominatim # module to convert an address into latitude and longitude values
 from IPython.core.display import HTML 
 from IPython.display import Image
-from datetime import datetime
 from tkinter import *
 import tkinter as tk
 import pandas as pd # library for data analsysis
@@ -40,11 +39,9 @@ import requests # library to handle requests
 import random # library for random number generation
 import folium # plotting library
 
-
-
 # print('Folium installed')
 # print('Libraries imported.')
-print('Starting application ... Necessary libraries imported.')
+print('Necessary libraries imported.')
 
 """
 # defining JIMUT's classic colors : 
@@ -76,39 +73,9 @@ color_pref_scrollbar = "#8b4513"
 
 
 def_sec_dummy = 0
-
-# utils function for CLI
-def time_now():
-    format = "1;32;40"
-    s1 = ''
-    time_stmp = datetime.now().isoformat(timespec='seconds')
-    s1 += '\x1b[%sm %s \x1b[0m' % (format, time_stmp)
-    print("running app : {} ".format(s1),end="")
-
-
-
-def banner_wisp():
-    format = "1;33;40"
-    s1 = ''
-    
-    banner = """
-██╗    ██╗██╗███████╗██████╗       
-██║    ██║██║██╔════╝██╔══██╗       
-██║ █╗ ██║██║███████╗██████╔╝        
-██║███╗██║██║╚════██║██╔═══╝       
-╚███╔███╔╝██║███████║██║                 
- ╚══╝╚══╝ ╚═╝╚══════╝╚═╝  	0.0.1-beta 
-				JIMUT(TM)  
-        """
-    s1 += '\x1b[%sm %s \x1b[0m' % (format, banner)
-    print(s1)
-    
-
-
-
 class guiProj:
     def __init__(self, master):
-        banner_wisp()
+        
         # the constructor for creating the GUI of the app using tkinter!
         # this is creating the padding for the input/label text etc.
         for i in range(100):
@@ -211,7 +178,6 @@ class guiProj:
 
             global def_sec_dummy
             def_sec_dummy = 1
-            time_now()
             print("USING DEFAULT SECRETS FOR CLIENT_ID and CLIENT_SECRET ")
             self.entry_list[0].insert(END, 'using default client ID')
             self.entry_list[1].insert(END, 'using default client secret')
@@ -254,13 +220,10 @@ class guiProj:
         VERSION = '20190122'
         LIMIT = 1000
         address = all_values[2]                                   #input("Enter the location/ city :")
-        time_now()
+        
         print('Your credentails:')
-        time_now()
         print('CLIENT_ID: ' + CLIENT_ID)
-        time_now()
         print('CLIENT_SECRET:' + CLIENT_SECRET)
-        time_now()
         print('Location of your choice : ', address)
 
         geolocator = Nominatim(timeout = 10)
@@ -269,10 +232,9 @@ class guiProj:
             location = geolocator.geocode(address)
             latitude = location.latitude
             longitude = location.longitude
-            time_now()
             print(latitude, longitude)
         except:
-            time_now()
+
             print("CHECK INTERNET CONNECTION!\n ELSE YOUR NET IS NOT IN FULL 3/4G")
             # directly closes the application
             exit(4)
@@ -280,12 +242,10 @@ class guiProj:
         
         RADIUS = int(all_values[3])
 
-        time_now()
         print("Total preference list : ",pref_list)
 
         # To clean the list if by chance someone has given unnecessary values or empty values or unused text entry box
         pref_list = list(filter(None, pref_list))
-        time_now()
         print("New pref list : ",pref_list)
 
         map_address = folium.Map(location=[latitude, longitude], zoom_start=11)
@@ -294,7 +254,6 @@ class guiProj:
         for item_pref in pref_list:
             url = 'https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}&ll={},{}&v={}&query={}&radius={}&limit={}'.format(CLIENT_ID, CLIENT_SECRET, latitude, longitude, VERSION, item_pref, RADIUS, LIMIT)
             try :
-                time_now()
                 print("url : ",url)
                 results = requests.get(url).json()
                 # assign relevant part of JSON to venues
@@ -302,14 +261,12 @@ class guiProj:
 
                 # tranform venues into a dataframe
                 dataframe = json_normalize(venues)
-                time_now()
                 print(dataframe.head())
                 try:
                     # keep only columns that include venue name, and anything that is associated with location
                     filtered_columns = ['name', 'categories'] + [col for col in dataframe.columns if col.startswith('location.')] + ['id']
                     dataframe_filtered = dataframe.loc[:, filtered_columns]
                 except:
-                    time_now()
                     print("Something went wrong!")
                     continue
                 # function that extracts the category of the venue
@@ -328,7 +285,6 @@ class guiProj:
                 try:
                     dataframe_filtered['categories'] = dataframe_filtered.apply(get_category_type, axis=1)
                 except:
-                    time_now()
                     print("Something went wrong!")
                     continue
 
@@ -342,9 +298,7 @@ class guiProj:
                 data_frame = dataframe_filtered.copy()
                 list_df.append(data_frame)
             except:
-                time_now()
                 print("Preference : ",item_pref," doesn't exists!!!")
-        time_now()
         print(list_df)
         # create map latitude and longitude values
         MAP_FINAL = folium.Map(location=[latitude, longitude], zoom_start=11)
@@ -408,7 +362,6 @@ class guiProj:
             page_content_type = page_content_type
 
             # kill a process, hosted on a localhost:PORT
-            time_now()
             subprocess.call(['fuser', '-k', '{0}/tcp'.format(PORT)])
 
             # Started creating a temprorary http server.
@@ -453,7 +406,7 @@ def main():
     root = Tk()
     root.configure(background=color_bg_app)
     # initialising the app
-    guiProj(root)
+    my_gui = guiProj(root)
     # goes on and on loop for tkinter!
     root.mainloop()
 
