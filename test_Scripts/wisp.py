@@ -1,9 +1,9 @@
 """
 #   This is the application (probably basic) to find the location (almost any) in any Country 
 #   according to the choices of your preference. Uses Foursquare API to get the data (geojson),
-#   also uses shitty tkinter GUI for accepting data. Please provide the Access key for the API
+#   also uses tkinter GUI for accepting data. Please provide the Access key for the API
 #   if bychance not given! This then creates a custom-made http server to visualise the locations
-#   in a web browser, because Folium (leaflet.js) doesn't work in GUI or Terminal LOL!
+#   in a web browser, because Folium (leaflet.js) doesn't work in GUI or Terminal.
 #   
 #   Caution: Please don't blame me if this doesn't works, cause the data may not be present for 
 #            some location, since everyone will use free services of foursquare API.
@@ -11,9 +11,9 @@
 #   @Copyright :: Don't share this software without the permission of the author
 #
 #   e-mail : jimutbahanpal@yahoo.com
-#   
+#   website : https://jimut123.github.io
 #   Created for the purpose of final year project! :=> Almost data visualization project!
-#   http://www.tayloredmktg.com/rgb/ for selecting and customising this s/w
+#   
 #   Dated : 10-02-2019
 """
 
@@ -37,6 +37,7 @@ import numpy as np # library to handle data in a vectorized manner
 import subprocess
 import webbrowser
 import requests # library to handle requests
+import argparse
 import random # library for random number generation
 import folium # plotting library
 
@@ -102,8 +103,18 @@ def banner_wisp():
         """
     s1 += '\x1b[%sm %s \x1b[0m' % (format, banner)
     print(s1)
-    
 
+"""
+parser = argparse.ArgumentParser()
+parser.add_argument('-save',action='store_true',dest='save_file_wisp',help='To save the output in <filename>.html',default=False)
+parser.add_argument('-h',action='store_true',dest='help_wisp',help='Help',default=False)
+args = parser.parse_args()
+if args.save_file_wisp == '-save':
+    print("No output file specified")
+
+if args.help_wisp == '-h':
+    print("LOL")
+"""
 
 
 class guiProj:
@@ -117,7 +128,7 @@ class guiProj:
         self.master = master
         master.title("WISP")
         # probably the do-able geometry
-        master.geometry("445x390")
+        master.geometry("430x395")
 
         # Shortened version of the code!
         msg_s = ["    CLIENT ID    ","    FOURSQUARE SECRET    ","    LOC/CITY    ","    RADIUS (in meters)    ","    NO. OF PREFERENCE    "]
@@ -190,11 +201,11 @@ class guiProj:
             
             canvas.config(width=250, height=200)
             
-            frame = tk.Frame(canvas)
+            frame = tk.Frame(canvas,background=color_preference_canvas)
             vsb = tk.Scrollbar(master, orient="vertical", command=canvas.yview, background=color_pref_scrollbar)
             canvas.configure(yscrollcommand=vsb.set)
             # for the scrollbar
-            vsb.grid(row=8, column=2,rowspan=int(get_pref_no), sticky="nsw")
+            vsb.grid(row=8, column=1,rowspan=int(get_pref_no), sticky="nsw")
             # for the grid
             canvas.grid(row=8,column=0,rowspan=1,sticky="nsew")
             canvas.create_window((4,4), window=frame, anchor="nw")
