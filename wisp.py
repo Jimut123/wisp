@@ -68,10 +68,10 @@ class guiProj:
             self.text_list[i_var] = StringVar()
             self.text_list[i_var].set("{}".format(self.msg_list[i_var]))
             self.label_list[i_var] = Label(master, textvariable=self.text_list[i_var])
-            self.label_list[i_var].grid(row=i_var, column=0, columnspan=1, sticky=W+E)
+            self.label_list[i_var].grid(row=i_var, column=0, columnspan=1, sticky=W+N)
 
             self.entry_list[i_var] = Entry(master)
-            self.entry_list[i_var].grid(row=i_var, column=1, columnspan=4, sticky=W+E)
+            self.entry_list[i_var].grid(row=i_var, column=1, columnspan=4, sticky=W+N)
             
             i_var += 1
         
@@ -99,17 +99,17 @@ class guiProj:
                 self.text_pref[iter_] = StringVar()
                 self.text_pref[iter_].set(self.pf_text[iter_])
                 self.label_pref[iter_] = Label(master, textvariable=self.text_pref[iter_])
-                self.label_pref[iter_].grid(row=5+iter_+1, column=0, columnspan=1, sticky=W+E)
+                self.label_pref[iter_].grid(row=5+iter_+1, column=0, columnspan=1, sticky=W+N)
 
                 # entry widget
                 self.entry_pref[iter_] = Entry(master)
-                self.entry_pref[iter_].grid(row=5+iter_+1, column=1, columnspan=4, sticky=W+E)
+                self.entry_pref[iter_].grid(row=5+iter_+1, column=1, columnspan=4, sticky=N+E)
 
             # disabling the button! for one-time use!
             self.submit_pref_buttton.configure(state=DISABLED)
 
             self.show_map_button = Button(master, text="show map",command=self.show_map)
-            self.show_map_button.grid(row=int(get_pref_no)+5+1,column=2,columnspan=6, sticky=W+E)
+            self.show_map_button.grid(row=int(get_pref_no)+5+1,column=2,columnspan=6, sticky=W+N)
 
         def def_sec():
             # this function sets the default secrets!
@@ -180,11 +180,13 @@ class guiProj:
         
         RADIUS = int(all_values[3])
 
-        print("Total preference list : ",pref_list)
-
+        print("--Total preference list : ",pref_list)
+        pref_list = list(filter(None, pref_list))
+        print("New pref list : ",pref_list)
         map_address = folium.Map(location=[latitude, longitude], zoom_start=11)
         marker_cluster = MarkerCluster().add_to(map_address)
         list_df = []
+        
         for item_pref in pref_list:
             url = 'https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}&ll={},{}&v={}&query={}&radius={}&limit={}'.format(CLIENT_ID, CLIENT_SECRET, latitude, longitude, VERSION, item_pref, RADIUS, LIMIT)
             try :
