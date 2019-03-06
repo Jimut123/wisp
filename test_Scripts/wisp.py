@@ -291,6 +291,9 @@ class guiProj:
         map_address = folium.Map(location=[latitude, longitude], zoom_start=11)
         marker_cluster = MarkerCluster().add_to(map_address)
         list_df = []
+        
+
+
         for item_pref in pref_list:
             url = 'https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}&ll={},{}&v={}&query={}&radius={}&limit={}'.format(CLIENT_ID, CLIENT_SECRET, latitude, longitude, VERSION, item_pref, RADIUS, LIMIT)
             try :
@@ -446,10 +449,14 @@ class guiProj:
         MAP_FINAL.save(tmp.name)
         with open(tmp.name) as f:
             folium_map_html = f.read()
-
+        global root
+        root.destroy()
+        time_now()
+        print("Destroying window!! exiting from GUI to Web - Browser")
         run_html_server(folium_map_html)
 
 def main():
+    global root
     root = Tk()
     root.configure(background=color_bg_app)
     # initialising the app
