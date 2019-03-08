@@ -6,7 +6,7 @@ def read(fname):
 if __name__ == '__main__':
     setup(
         name = 'wisp',
-        version="0.0.3-beta",
+        version="0.0.5-beta",
         description = 'A preference based location finder app',
         author = 'Jimut Bahan Pal',
         author_email = 'paljimutbahan@gmail.com',

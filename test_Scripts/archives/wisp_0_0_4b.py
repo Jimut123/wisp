@@ -304,8 +304,7 @@ class guiProj:
         list_df = []
         
 
-        col_fill = []
-        col_border = []
+
         for item_pref in pref_list:
             url = 'https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}&ll={},{}&v={}&query={}&radius={}&limit={}'.format(CLIENT_ID, CLIENT_SECRET, latitude, longitude, VERSION, item_pref, RADIUS, LIMIT)
             try :
@@ -365,12 +364,10 @@ class guiProj:
         MAP_FINAL = folium.Map(location=[latitude, longitude], zoom_start=11)
         # configuration for the dafault map to be created!
         marker_cluster = MarkerCluster().add_to(MAP_FINAL)
-        
         for list_item in list_df:
             FILL_COL = str(get_random_col())
             OVER_COL = str(get_random_col())
-            col_fill.append(FILL_COL)
-            col_border.append(OVER_COL)
+
 
             # Check whether the values are actually present or not!
 
@@ -444,41 +441,7 @@ class guiProj:
                     fill=True,
                     fill_color=FILL_COL,
                     fill_opacity=0.7).add_to(marker_cluster)  
-            dots_html = ""
-            for var1, var2, var3 in zip(pref_list,col_fill,col_border):
-                dots_html = dots_html + """
-                &nbsp; {} &nbsp;
-                <svg height="10" width="10">
-                <circle cx="5" cy="5" r="4" stroke="{}" stroke-width="3" fill="{}" />
-                </svg><br/> """.format(str(var1),str(var3),str(var2))
-            time_now()
-            print(dots_html)
-        legend_html = """
-                <div style = "position: fixed; top: 5px; left: 950px; z-index:9999;">
-                    <h1 ><i style="color:"#fcfc64"> WISP </i></h1> 
-                </div>
-                <div style="position: fixed; 
-                bottom: 50px; left: 50px;  
-                border:2px solid grey; z-index:9999; font-size:14px;">&nbsp; 
-                    <b>Legend <b>
-                    <br>{}
-                </div>
-                <div style="position: fixed; 
-                bottom: 50px; right: 50px;  
-                z-index:9999; font-size:10px;
-                "> 
-                    <b style="color:#f90404" style="align: justified">
-                        WISP <br/> 
-                        version: 0.0.5-beta <br/>
-                        &copyJimut Bahan Pal <br/> 
-                        Author : jimutbahanpal@yahoo.com 
-                    </b>
-                </div>
-                """.format(str(dots_html))
-        time_now()
-        print(legend_html)
-
-        MAP_FINAL.get_root().html.add_child(folium.Element(legend_html))
+        
         # setting port addr, localhost for the custom http server
         PORT = 7000
         HOST = '127.0.0.1'
