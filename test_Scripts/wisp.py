@@ -131,7 +131,7 @@ class guiProj:
         master.geometry("430x395")
 
         # Shortened version of the code!
-        msg_s = ["    CLIENT ID    ","    FOURSQUARE SECRET    ","    LOC/CITY    ","    RADIUS (in meters)    ","    NO. OF PREFERENCE    "]
+        msg_s = ["    CLIENT ID    ","    FOURSQUARE SECRET    ","    LOC/CITY    ","    RADIUS (in meters) >= 1000    ","    NO. OF PREFERENCE    "]
         i_var = 0
 
         # just initializing!
@@ -454,8 +454,8 @@ class guiProj:
             time_now()
             print(dots_html)
         legend_html = """
-                <div style = "position: fixed; top: 5px; left: 950px; z-index:9999;">
-                    <h1 ><i style="color:"#fcfc64"> WISP </i></h1> 
+                <div style = "position: fixed; top: 5px; left: 900px; z-index:9999;">
+                    <h1 ><i style="color:#c6ae0d; font face=Verdana,Arial,Helvetica "> WISP </i></h1> 
                 </div>
                 <div style="position: fixed; 
                 bottom: 50px; left: 50px;  
