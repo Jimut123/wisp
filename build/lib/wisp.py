@@ -40,45 +40,96 @@ import requests # library to handle requests
 import argparse
 import random # library for random number generation
 import folium # plotting library
-
+import json
 
 
 # print('Folium installed')
 # print('Libraries imported.')
 print('Starting application ... Necessary libraries imported.')
 
-"""
-# defining JIMUT's classic colors : 
-color_bg_app = "#ffff00"
-color_msg = "#ffd700"
-color_entry_default = "#ffffff"
-color_use_def_sec_button = "#daa520"
-color_submit_button = "#b8860b"
-color_preference_label = "#f0e68c"
-color_preference_canvas = "#ffff00"
-color_preference_entry = "#ffffff"
-color_show_map_button = "#8b4513"
-color_pref_scrollbar = "#ffffe0"
+
+
 
 """
 
-# defining JIMUT's classic colors : 
+# defining JIMUT's classic theme for wisp : 
 color_bg_app = "#ffd700"
 color_msg = "#ffd700"
+color_msg_fg = "#000000"
 color_entry_default = "#ffffff"
+color_entry_default_fg = "#000000"
 color_use_def_sec_button = "#ffff00"
+color_use_def_sec_button_fg = "#000000"
 color_submit_button = "#ffff00"
+color_submit_button_fg = "#000000"
 color_preference_label = "#ffd700"
+color_preference_label_fg = "#000000"
 color_preference_canvas = "#ffd700"
 color_preference_entry = "#ffffff"
+color_preference_entry_fg = "#000000"
 color_show_map_button = "#ffff00"
+color_show_map_button_fg = "#000000"
 color_pref_scrollbar = "#8b4513"
+"""
+
+# defining JIMUT's light theme for wisp: 
+color_bg_app = "#7fffd4"
+color_msg = "#7fffd4"
+color_msg_fg = "#000000"
+color_entry_default = "#a1caf1"
+color_entry_default_fg = "#000000"
+color_use_def_sec_button = "#88d8c0"
+color_use_def_sec_button_fg = "#000000"
+color_submit_button = "#00cc99"
+color_submit_button_fg = "#000000"
+color_preference_label = "#afe4de"
+color_preference_label_fg = "#000000"
+color_preference_canvas = "#afe4de"
+color_preference_entry = "#bcd4e6"
+color_preference_entry_fg = "#000000"
+color_show_map_button = "#00fa9a"
+color_show_map_button_fg = "#000000"
+color_pref_scrollbar = "#50c878"
 
 
+"""
+# defining JIMUT's dark theme for wisp: 
+color_bg_app = "#253529"
+color_msg = "#253529"
+color_msg_fg = "#fefdfa"
+color_entry_default = "#000000"
+color_entry_default_fg = "#fefdfa"
+color_use_def_sec_button = "#0a1195"
+color_use_def_sec_button_fg = "#fefdfa"
+color_submit_button = "#0a1195"
+color_submit_button_fg = "#fefdfa"
+color_preference_label = "#1e4d2b"
+color_preference_label_fg = "#fefdfa"
+color_preference_canvas = "#1e4d2b"
+color_preference_entry = "#000000"
+color_preference_entry_fg = "#fefdfa"
+color_show_map_button = "#0a1195"
+color_show_map_button_fg = "#fefdfa"
+color_pref_scrollbar = "#50c878"
+"""
 
 def_sec_dummy = 0
 
 # utils function for CLI
+
+def get_json_secrets():
+    # this reads the secrets from the secret.txt file and returns them in tuple format!
+    try:
+        with open('secrets.txt', 'r') as f:
+            array = json.load(f)
+        print(array)
+        # returns a tuple containing client id and client secret
+        return str(array['client_id']),str(array['client_secret'])
+    except:
+        print("NO SECRETS PRESENT, please enter it in text file secrets.txt ...\n Else use the GUI to input secrets!")
+        
+
+
 def time_now():
     format = "1;32;40"
     s1 = ''
@@ -145,10 +196,10 @@ class guiProj:
             self.msg_list[i_var] = msg
             self.text_list[i_var] = StringVar()
             self.text_list[i_var].set("{}".format(self.msg_list[i_var]))
-            self.label_list[i_var] = Label(master, textvariable=self.text_list[i_var],background=color_msg)
+            self.label_list[i_var] = Label(master, textvariable=self.text_list[i_var],background=color_msg,foreground=color_msg_fg)
             self.label_list[i_var].grid(row=i_var, column=0, columnspan=1, sticky=W+E)
 
-            self.entry_list[i_var] = Entry(master,background=color_entry_default)
+            self.entry_list[i_var] = Entry(master,background=color_entry_default,foreground=color_entry_default_fg)
             self.entry_list[i_var].grid(row=i_var, column=1, columnspan=1, sticky=W+E)
             
             i_var += 1
@@ -182,11 +233,11 @@ class guiProj:
                     # creating the label
                     self.text_pref[iter_] = StringVar()
                     self.text_pref[iter_].set(self.pf_text[iter_])
-                    self.label_pref[iter_] = Label(frame, textvariable=self.text_pref[iter_],background=color_preference_label)
+                    self.label_pref[iter_] = Label(frame, textvariable=self.text_pref[iter_],background=color_preference_label,foreground=color_preference_label_fg)
                     self.label_pref[iter_].grid(row=5+iter_+1, column=0, sticky=W+N)
 
                     # entry widget
-                    self.entry_pref[iter_] = Entry(frame,background=color_preference_entry)
+                    self.entry_pref[iter_] = Entry(frame,background=color_preference_entry,foreground=color_preference_entry_fg)
                     self.entry_pref[iter_].grid(row=5+iter_+1, column=1, sticky=W+N)
                 """
                 for row in range(100):
@@ -214,25 +265,35 @@ class guiProj:
             # disabling the button! for one-time use!
             self.submit_pref_buttton.configure(state=DISABLED)
 
-            self.show_map_button = Button(master, text="show map",command=self.show_map,background=color_show_map_button)
+            self.show_map_button = Button(master, text="show map",command=self.show_map,background=color_show_map_button,foreground=color_show_map_button_fg)
             self.show_map_button.grid(row=int(get_pref_no)+8,column=1,columnspan=1, sticky=W+E)
 
         def def_sec():
             # this function sets the default secrets!
 
             global def_sec_dummy
-            def_sec_dummy = 1
-            time_now()
-            print("USING DEFAULT SECRETS FOR CLIENT_ID and CLIENT_SECRET ")
-            self.entry_list[0].insert(END, 'using default client ID')
-            self.entry_list[1].insert(END, 'using default client secret')
-            # disabling things! lol
-            self.use_default_sec.configure(state=DISABLED)
+            try:
+                test1,test2 =get_json_secrets()
+                def_sec_dummy = 1
+                time_now()
+                print("USING DEFAULT SECRETS FOR CLIENT_ID and CLIENT_SECRET ")
+                self.entry_list[0].insert(END, 'using default client ID')
+                self.entry_list[1].insert(END, 'using default client secret')
+                # disabling things! lol
+                self.use_default_sec.configure(state=DISABLED)
+            except:
+                def_sec_dummy = 0
+                time_now()
+                print("PLEASE ENTER SECRETS IN secrets.txt file in the current directory!")
+                time_now()
+                print("QUITTING")
+                exit(4)
+            
         # place holder gets called when we use this! (default secret thingie)
-        self.use_default_sec = Button(master, text="use default secrets",command=def_sec,background=color_use_def_sec_button)
+        self.use_default_sec = Button(master, text="use default secrets",command=def_sec,background=color_use_def_sec_button,foreground=color_use_def_sec_button_fg)
         self.use_default_sec.grid(row=5,column=0, sticky=W+E)
         # again button thing
-        self.submit_pref_buttton = Button(master, text="submit",command=submit_pref,background=color_submit_button)
+        self.submit_pref_buttton = Button(master, text="submit",command=submit_pref,background=color_submit_button,foreground=color_submit_button_fg)
         self.submit_pref_buttton.grid(row=5,column=1,columnspan=1, sticky=W+E)
     
     def show_map(self):
@@ -255,13 +316,15 @@ class guiProj:
         global def_sec_dummy
         if def_sec_dummy == 1:
             # default things! lol make sure to clear them!!!!
-            CLIENT_ID = "QGITIC5BRJSPQFIEDOINIWZUBWBUX3JUGOAJO2H1KC1HPT1T"
-            CLIENT_SECRET = "2FJXKPKYOMK4DISKLHL4DI111FPZYCTZIZW2IF55VCLK0WJF"
+            # this takes the tuple returned from the get_json_secrets() function which reads secrets from secrets.txt file
+            time_now()
+            CLIENT_ID, CLIENT_SECRET = get_json_secrets()
+            
+
         elif def_sec_dummy == 0:
             CLIENT_ID = all_values[0]                   #input("Enter the client ID : ") # your Foursquare ID
-            # QGITIC5BRJSPQFIEDOINIWZUBWBUX3JUGOAJO2H1KC1HPT1T
             CLIENT_SECRET = all_values[1]               #input("Enter the Foursquare secret : ") # your Foursquare Secret
-            # 2FJXKPKYOMK4DISKLHL4DI111FPZYCTZIZW2IF55VCLK0WJF
+            
         VERSION = '20190122'
         LIMIT = 1000
         address = all_values[2]                                   #input("Enter the location/ city :")
