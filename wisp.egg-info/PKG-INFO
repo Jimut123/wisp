@@ -1,6 +1,6 @@
 Metadata-Version: 1.2
 Name: wisp
-Version: 0.0.5b0
+Version: 0.0.8b0
 Summary: A preference based location finder app
 Home-page: UNKNOWN
 Author: Jimut Bahan Pal
@@ -11,7 +11,7 @@ License: GPLv2+
 Description: UNKNOWN
 Keywords: Preference,location,wisp,requests,html,json,numpy,pandas,software,tkinter,folium,geopy,lat lon,wget,Ipython,location cluster,KNN,Machine learning,clustering
 Platform: Linux
-Classifier: Development Status :: 0.0.1 - Beta
+Classifier: Development Status :: 0.0.8 - Beta
 Classifier: Environment :: Console
 Classifier: Intended Audience :: End Users/Desktop
 Classifier: Intended Audience :: System Administrators

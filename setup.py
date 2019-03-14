@@ -6,7 +6,7 @@ def read(fname):
 if __name__ == '__main__':
     setup(
         name = 'wisp',
-        version="0.0.5-beta",
+        version="0.0.8-beta",
         description = 'A preference based location finder app',
         author = 'Jimut Bahan Pal',
         author_email = 'paljimutbahan@gmail.com',
@@ -33,7 +33,7 @@ if __name__ == '__main__':
         ],
         keywords = 'Preference, location, wisp, requests, html, json, numpy, pandas, software, tkinter, folium, geopy, lat lon, wget, Ipython, location cluster, KNN, Machine learning, clustering',
         classifiers = [
-                'Development Status :: 0.0.1 - Beta',
+                'Development Status :: 0.0.8 - Beta',
                 'Environment :: Console',
                 'Intended Audience :: End Users/Desktop',
                 'Intended Audience :: System Administrators',

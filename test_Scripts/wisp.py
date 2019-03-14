@@ -17,7 +17,7 @@
 #   Dated : 10-02-2019
 """
 
-__version__ = "0.0.2-beta"
+__version__ = "0.0.8-beta"
 __author__ = "Jimut Bahan Pal <jimutbahanpal@yahoo.com>"
 
 from tkinter import Tk, Label, Button, Entry, StringVar, DISABLED, NORMAL, END, W, E, N, S
@@ -51,7 +51,6 @@ print('Starting application ... Necessary libraries imported.')
 
 
 
-"""
 # defining JIMUT's classic theme for wisp : 
 color_bg_app = "#ffd700"
 color_msg = "#ffd700"
@@ -78,7 +77,7 @@ color_preference_entry_fg = "#000000"
 color_show_map_button = "#ffff00"
 color_show_map_button_fg = "#000000"
 color_pref_scrollbar = "#8b4513"
-"""
+
 
 
 """
@@ -110,7 +109,7 @@ color_show_map_button_fg = "#000000"
 color_pref_scrollbar = "#50c878"
 """
 
-
+"""
 # defining JIMUT's dark theme for wisp: 
 color_bg_app = "#253529"
 color_msg = "#253529"
@@ -137,7 +136,7 @@ color_preference_entry_fg = "#fefdfa"
 color_show_map_button = "#0a1195"
 color_show_map_button_fg = "#fefdfa"
 color_pref_scrollbar = "#50c878"
-
+"""
 
 def_sec_dummy = 0
 
@@ -175,7 +174,7 @@ def banner_wisp():
 ██║ █╗ ██║██║███████╗██████╔╝        
 ██║███╗██║██║╚════██║██╔═══╝       
 ╚███╔███╔╝██║███████║██║                 
- ╚══╝╚══╝ ╚═╝╚══════╝╚═╝  	0.0.1-beta 
+ ╚══╝╚══╝ ╚═╝╚══════╝╚═╝  	0.0.8-beta 
 				JIMUT(TM)  
         """
     s1 += '\x1b[%sm %s \x1b[0m' % (format, banner)
@@ -607,7 +606,7 @@ class guiProj:
                 "> 
                     <b style="color:#f90404" style="align: justified">
                         WISP <br/> 
-                        version: 0.0.5-beta <br/>
+                        version: 0.0.8-beta <br/>
                         &copyJimut Bahan Pal <br/> 
                         Author : jimutbahanpal@yahoo.com 
                     </b>

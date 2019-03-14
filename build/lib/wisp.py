@@ -17,7 +17,7 @@
 #   Dated : 10-02-2019
 """
 
-__version__ = "0.0.2-beta"
+__version__ = "0.0.8-beta"
 __author__ = "Jimut Bahan Pal <jimutbahanpal@yahoo.com>"
 
 from tkinter import Tk, Label, Button, Entry, StringVar, DISABLED, NORMAL, END, W, E, N, S
@@ -41,7 +41,7 @@ import argparse
 import random # library for random number generation
 import folium # plotting library
 import json
-
+import os
 
 # print('Folium installed')
 # print('Libraries imported.')
@@ -50,12 +50,19 @@ print('Starting application ... Necessary libraries imported.')
 
 
 
-"""
 
 # defining JIMUT's classic theme for wisp : 
 color_bg_app = "#ffd700"
 color_msg = "#ffd700"
 color_msg_fg = "#000000"
+color_dropdown_fg = "#000000"
+color_dropdown = "#cfc611"
+color_savemap_label = "#ffd700"
+color_savemap_label_fg = "#000000"
+color_label_select_map_fg = "#000000"
+color_label_select_map = "#ffd700"
+color_save_map_entry = "#ffffff"
+color_save_map_entry_fg = "#000000"
 color_entry_default = "#ffffff"
 color_entry_default_fg = "#000000"
 color_use_def_sec_button = "#ffff00"
@@ -70,12 +77,22 @@ color_preference_entry_fg = "#000000"
 color_show_map_button = "#ffff00"
 color_show_map_button_fg = "#000000"
 color_pref_scrollbar = "#8b4513"
-"""
 
+
+
+"""
 # defining JIMUT's light theme for wisp: 
 color_bg_app = "#7fffd4"
 color_msg = "#7fffd4"
 color_msg_fg = "#000000"
+color_dropdown_fg = "#000000"
+color_dropdown = "#7dcea0"
+color_savemap_label = "#7fffd4"
+color_savemap_label_fg = "#000000"
+color_label_select_map_fg = "#000000"
+color_label_select_map = "#7fffd4"
+color_save_map_entry = "#a1caf1"
+color_save_map_entry_fg = "#000000"
 color_entry_default = "#a1caf1"
 color_entry_default_fg = "#000000"
 color_use_def_sec_button = "#88d8c0"
@@ -90,13 +107,21 @@ color_preference_entry_fg = "#000000"
 color_show_map_button = "#00fa9a"
 color_show_map_button_fg = "#000000"
 color_pref_scrollbar = "#50c878"
-
+"""
 
 """
 # defining JIMUT's dark theme for wisp: 
 color_bg_app = "#253529"
 color_msg = "#253529"
 color_msg_fg = "#fefdfa"
+color_dropdown_fg = "#fefdfa"
+color_dropdown = "#07853b"
+color_savemap_label = "#253529"
+color_savemap_label_fg = "#fefdfa"
+color_label_select_map_fg = "#fefdfa"
+color_label_select_map = "#253529"
+color_save_map_entry = "#000000"
+color_save_map_entry_fg = "#fefdfa"
 color_entry_default = "#000000"
 color_entry_default_fg = "#fefdfa"
 color_use_def_sec_button = "#0a1195"
@@ -149,7 +174,7 @@ def banner_wisp():
 ██║ █╗ ██║██║███████╗██████╔╝        
 ██║███╗██║██║╚════██║██╔═══╝       
 ╚███╔███╔╝██║███████║██║                 
- ╚══╝╚══╝ ╚═╝╚══════╝╚═╝  	0.0.1-beta 
+ ╚══╝╚══╝ ╚═╝╚══════╝╚═╝  	0.0.8-beta 
 				JIMUT(TM)  
         """
     s1 += '\x1b[%sm %s \x1b[0m' % (format, banner)
@@ -179,7 +204,7 @@ class guiProj:
         self.master = master
         master.title("WISP")
         # probably the do-able geometry
-        master.geometry("430x395")
+        master.geometry("430x460")
 
         # Shortened version of the code!
         msg_s = ["    CLIENT ID    ","    FOURSQUARE SECRET    ","    LOC/CITY    ","    RADIUS (in meters) >= 1000    ","    NO. OF PREFERENCE    "]
@@ -265,13 +290,42 @@ class guiProj:
             # disabling the button! for one-time use!
             self.submit_pref_buttton.configure(state=DISABLED)
 
+            MAP_TYPES = ["Mapbox Bright","Stamen Toner","Stamen Terrain","OpenStreetMap","Mapbox Control Room"]
+
+            self.label_select_map = Label(master, text="SELECT MAP-TYPE",foreground=color_label_select_map_fg,background=color_label_select_map)
+            self.label_select_map.grid(row=int(get_pref_no)+8,column=0,columnspan=1,sticky=W+E+N+S)
+            self.dropdown_map_select = StringVar(master)
+            self.dropdown_map_select.set(MAP_TYPES[0])
+            
+            # foreground=color_dropdown_fg,background=color_dropdown,
+            self.dropdown_menu = OptionMenu(master,self.dropdown_map_select,*MAP_TYPES)
+            # to set the color of the dropdown menu to a different color
+            self.dropdown_menu.config(foreground=color_dropdown_fg,background=color_dropdown)
+
+            self.dropdown_menu.grid(row=int(get_pref_no)+8,column=1,columnspan=1,sticky=W+E+N+S)
+            # use dropdown_map_select.get() to get the contents of this list
+
+            # now save the file's entry
+
+            self.save_map = Label(master, text="SAVE MAP AS (OPTIONAL)",background=color_savemap_label,foreground=color_savemap_label_fg)
+            self.save_map.grid(row=int(get_pref_no)+9,column=0,columnspan=1,sticky=W+E+N+S)
+
+            # for the save map entry file
+            self.save_map_entry = Entry(master,background=color_save_map_entry,foreground=color_save_map_entry_fg)
+            self.save_map_entry.grid(row=int(get_pref_no)+9,column=1,columnspan=1, sticky=W+E)
+
             self.show_map_button = Button(master, text="show map",command=self.show_map,background=color_show_map_button,foreground=color_show_map_button_fg)
-            self.show_map_button.grid(row=int(get_pref_no)+8,column=1,columnspan=1, sticky=W+E)
+            self.show_map_button.grid(row=int(get_pref_no)+10,column=1,columnspan=1, sticky=W+E)
+
+
+
 
         def def_sec():
             # this function sets the default secrets!
 
             global def_sec_dummy
+
+            
             try:
                 test1,test2 =get_json_secrets()
                 def_sec_dummy = 1
@@ -295,8 +349,25 @@ class guiProj:
         # again button thing
         self.submit_pref_buttton = Button(master, text="submit",command=submit_pref,background=color_submit_button,foreground=color_submit_button_fg)
         self.submit_pref_buttton.grid(row=5,column=1,columnspan=1, sticky=W+E)
+
     
     def show_map(self):
+        # fetching the name of the map to be save here too!
+        time_now()
+        global save_name_map
+        try:
+            save_name_map = str(self.save_map_entry.get())
+            time_now()
+            if save_name_map == "":
+                time_now()
+                print("NO FILE NAME GIVEN!..\n SO NOT SAVING!")
+            else:
+                print("FILE NAME GOT !!: ",save_name_map)
+        except:
+            time_now()
+            print("NO FILE NAME GIVEN!..\n SO NOT SAVING!")
+            save_name_map=None
+
         # To get all the values and show the map!
         all_values = []     # has all the values that is got from the GUI
         for item in self.entry_list:
@@ -425,7 +496,10 @@ class guiProj:
         time_now()
         print(list_df)
         # create map latitude and longitude values
-        MAP_FINAL = folium.Map(location=[latitude, longitude], zoom_start=11)
+        time_now()
+        print("MAP SELECTED :=> ",self.dropdown_map_select.get())
+        
+        MAP_FINAL = folium.Map(location=[latitude, longitude], tiles=str(self.dropdown_map_select.get()),zoom_start=11)
         # configuration for the dafault map to be created!
         marker_cluster = MarkerCluster().add_to(MAP_FINAL)
         
@@ -532,7 +606,7 @@ class guiProj:
                 "> 
                     <b style="color:#f90404" style="align: justified">
                         WISP <br/> 
-                        version: 0.0.5-beta <br/>
+                        version: 0.0.8-beta <br/>
                         &copyJimut Bahan Pal <br/> 
                         Author : jimutbahanpal@yahoo.com 
                     </b>
@@ -624,6 +698,28 @@ class guiProj:
         root.destroy()
         time_now()
         print("Destroying window!! exiting from GUI to Web - Browser")
+
+        # to get the name of the file to be saved!
+        if save_name_map == None:
+            pass
+        else:
+            name_final = save_name_map+".html"
+            if save_name_map==None:
+                pass
+            else:
+                time_now()
+                print("WRITING TO HTML FILE !!!")
+                time_now()
+                with open(name_final, 'w') as file_:
+                    file_.write(folium_map_html)
+        try:
+            time_now()
+            os.remove(".html")
+            print("CACHES REMOVED!")
+        except:
+            time_now()
+            print("...CLEANING CACHES!")
+        
         run_html_server(folium_map_html)
 
 def main():
