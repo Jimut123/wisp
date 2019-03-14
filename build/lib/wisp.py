@@ -45,98 +45,111 @@ import os
 
 # print('Folium installed')
 # print('Libraries imported.')
-print('Starting application ... Necessary libraries imported.')
 
-
-
-
-
-# defining JIMUT's classic theme for wisp : 
-color_bg_app = "#ffd700"
-color_msg = "#ffd700"
-color_msg_fg = "#000000"
-color_dropdown_fg = "#000000"
-color_dropdown = "#cfc611"
-color_savemap_label = "#ffd700"
-color_savemap_label_fg = "#000000"
-color_label_select_map_fg = "#000000"
-color_label_select_map = "#ffd700"
-color_save_map_entry = "#ffffff"
-color_save_map_entry_fg = "#000000"
-color_entry_default = "#ffffff"
-color_entry_default_fg = "#000000"
-color_use_def_sec_button = "#ffff00"
-color_use_def_sec_button_fg = "#000000"
-color_submit_button = "#ffff00"
-color_submit_button_fg = "#000000"
-color_preference_label = "#ffd700"
-color_preference_label_fg = "#000000"
-color_preference_canvas = "#ffd700"
-color_preference_entry = "#ffffff"
-color_preference_entry_fg = "#000000"
-color_show_map_button = "#ffff00"
-color_show_map_button_fg = "#000000"
-color_pref_scrollbar = "#8b4513"
-
-
-
+parser = argparse.ArgumentParser()
+parser.add_argument("-q","--quiet", help="will not display anything in the terminal",
+                    action="store_true")
+parser.add_argument("-t","--theme", help="to select theme [1] classic [2] light [3] dark",choices=[1, 2, 3],
+                    type=int)
+args = parser.parse_args()
 """
-# defining JIMUT's light theme for wisp: 
-color_bg_app = "#7fffd4"
-color_msg = "#7fffd4"
-color_msg_fg = "#000000"
-color_dropdown_fg = "#000000"
-color_dropdown = "#7dcea0"
-color_savemap_label = "#7fffd4"
-color_savemap_label_fg = "#000000"
-color_label_select_map_fg = "#000000"
-color_label_select_map = "#7fffd4"
-color_save_map_entry = "#a1caf1"
-color_save_map_entry_fg = "#000000"
-color_entry_default = "#a1caf1"
-color_entry_default_fg = "#000000"
-color_use_def_sec_button = "#88d8c0"
-color_use_def_sec_button_fg = "#000000"
-color_submit_button = "#00cc99"
-color_submit_button_fg = "#000000"
-color_preference_label = "#afe4de"
-color_preference_label_fg = "#000000"
-color_preference_canvas = "#afe4de"
-color_preference_entry = "#bcd4e6"
-color_preference_entry_fg = "#000000"
-color_show_map_button = "#00fa9a"
-color_show_map_button_fg = "#000000"
-color_pref_scrollbar = "#50c878"
+if not args.quiet:
+    print("NOT QUIET")
+if args.theme == None:
+    print("USING DEFAULT THEME")
+else:
+    print("THEME : ",args.theme)
 """
+if not args.quiet:
+    print('Starting application ... Necessary libraries imported.')
 
-"""
-# defining JIMUT's dark theme for wisp: 
-color_bg_app = "#253529"
-color_msg = "#253529"
-color_msg_fg = "#fefdfa"
-color_dropdown_fg = "#fefdfa"
-color_dropdown = "#07853b"
-color_savemap_label = "#253529"
-color_savemap_label_fg = "#fefdfa"
-color_label_select_map_fg = "#fefdfa"
-color_label_select_map = "#253529"
-color_save_map_entry = "#000000"
-color_save_map_entry_fg = "#fefdfa"
-color_entry_default = "#000000"
-color_entry_default_fg = "#fefdfa"
-color_use_def_sec_button = "#0a1195"
-color_use_def_sec_button_fg = "#fefdfa"
-color_submit_button = "#0a1195"
-color_submit_button_fg = "#fefdfa"
-color_preference_label = "#1e4d2b"
-color_preference_label_fg = "#fefdfa"
-color_preference_canvas = "#1e4d2b"
-color_preference_entry = "#000000"
-color_preference_entry_fg = "#fefdfa"
-color_show_map_button = "#0a1195"
-color_show_map_button_fg = "#fefdfa"
-color_pref_scrollbar = "#50c878"
-"""
+
+if args.theme == None or args.theme == 1:
+    # print("USING DEFAULT THEME")
+    # defining JIMUT's classic theme for wisp : 
+    color_bg_app = "#ffd700"
+    color_msg = "#ffd700"
+    color_msg_fg = "#000000"
+    color_dropdown_fg = "#000000"
+    color_dropdown = "#cfc611"
+    color_savemap_label = "#ffd700"
+    color_savemap_label_fg = "#000000"
+    color_label_select_map_fg = "#000000"
+    color_label_select_map = "#ffd700"
+    color_save_map_entry = "#ffffff"
+    color_save_map_entry_fg = "#000000"
+    color_entry_default = "#ffffff"
+    color_entry_default_fg = "#000000"
+    color_use_def_sec_button = "#ffff00"
+    color_use_def_sec_button_fg = "#000000"
+    color_submit_button = "#ffff00"
+    color_submit_button_fg = "#000000"
+    color_preference_label = "#ffd700"
+    color_preference_label_fg = "#000000"
+    color_preference_canvas = "#ffd700"
+    color_preference_entry = "#ffffff"
+    color_preference_entry_fg = "#000000"
+    color_show_map_button = "#ffff00"
+    color_show_map_button_fg = "#000000"
+    color_pref_scrollbar = "#8b4513"
+
+elif args.theme == 2:
+    #print("THEME : ",args.theme)
+    # defining JIMUT's light theme for wisp: 
+    color_bg_app = "#7fffd4"
+    color_msg = "#7fffd4"
+    color_msg_fg = "#000000"
+    color_dropdown_fg = "#000000"
+    color_dropdown = "#7dcea0"
+    color_savemap_label = "#7fffd4"
+    color_savemap_label_fg = "#000000"
+    color_label_select_map_fg = "#000000"
+    color_label_select_map = "#7fffd4"
+    color_save_map_entry = "#a1caf1"
+    color_save_map_entry_fg = "#000000"
+    color_entry_default = "#a1caf1"
+    color_entry_default_fg = "#000000"
+    color_use_def_sec_button = "#88d8c0"
+    color_use_def_sec_button_fg = "#000000"
+    color_submit_button = "#00cc99"
+    color_submit_button_fg = "#000000"
+    color_preference_label = "#afe4de"
+    color_preference_label_fg = "#000000"
+    color_preference_canvas = "#afe4de"
+    color_preference_entry = "#bcd4e6"
+    color_preference_entry_fg = "#000000"
+    color_show_map_button = "#00fa9a"
+    color_show_map_button_fg = "#000000"
+    color_pref_scrollbar = "#50c878"
+
+elif args.theme == 3:
+    # defining JIMUT's dark theme for wisp: 
+    color_bg_app = "#253529"
+    color_msg = "#253529"
+    color_msg_fg = "#fefdfa"
+    color_dropdown_fg = "#fefdfa"
+    color_dropdown = "#07853b"
+    color_savemap_label = "#253529"
+    color_savemap_label_fg = "#fefdfa"
+    color_label_select_map_fg = "#fefdfa"
+    color_label_select_map = "#253529"
+    color_save_map_entry = "#000000"
+    color_save_map_entry_fg = "#fefdfa"
+    color_entry_default = "#000000"
+    color_entry_default_fg = "#fefdfa"
+    color_use_def_sec_button = "#0a1195"
+    color_use_def_sec_button_fg = "#fefdfa"
+    color_submit_button = "#0a1195"
+    color_submit_button_fg = "#fefdfa"
+    color_preference_label = "#1e4d2b"
+    color_preference_label_fg = "#fefdfa"
+    color_preference_canvas = "#1e4d2b"
+    color_preference_entry = "#000000"
+    color_preference_entry_fg = "#fefdfa"
+    color_show_map_button = "#0a1195"
+    color_show_map_button_fg = "#fefdfa"
+    color_pref_scrollbar = "#50c878"
+
 
 def_sec_dummy = 0
 
@@ -147,11 +160,13 @@ def get_json_secrets():
     try:
         with open('secrets.txt', 'r') as f:
             array = json.load(f)
-        print(array)
+        if not args.quiet:
+            print(array)
         # returns a tuple containing client id and client secret
         return str(array['client_id']),str(array['client_secret'])
     except:
-        print("NO SECRETS PRESENT, please enter it in text file secrets.txt ...\n Else use the GUI to input secrets!")
+        if not args.quiet:
+            print("NO SECRETS PRESENT, please enter it in text file secrets.txt ...\n Else use the GUI to input secrets!")
         
 
 
@@ -160,7 +175,8 @@ def time_now():
     s1 = ''
     time_stmp = datetime.now().isoformat(timespec='seconds')
     s1 += '\x1b[%sm %s \x1b[0m' % (format, time_stmp)
-    print("running app : {} ".format(s1),end="")
+    if not args.quiet:
+        print("running app : {} ".format(s1),end="")
 
 
 
@@ -178,7 +194,8 @@ def banner_wisp():
 				JIMUT(TM)  
         """
     s1 += '\x1b[%sm %s \x1b[0m' % (format, banner)
-    print(s1)
+    if not args.quiet:
+        print(s1)
 
 """
 parser = argparse.ArgumentParser()
@@ -330,7 +347,8 @@ class guiProj:
                 test1,test2 =get_json_secrets()
                 def_sec_dummy = 1
                 time_now()
-                print("USING DEFAULT SECRETS FOR CLIENT_ID and CLIENT_SECRET ")
+                if not args.quiet:
+                    print("USING DEFAULT SECRETS FOR CLIENT_ID and CLIENT_SECRET ")
                 self.entry_list[0].insert(END, 'using default client ID')
                 self.entry_list[1].insert(END, 'using default client secret')
                 # disabling things! lol
@@ -338,9 +356,11 @@ class guiProj:
             except:
                 def_sec_dummy = 0
                 time_now()
-                print("PLEASE ENTER SECRETS IN secrets.txt file in the current directory!")
+                if not args.quiet:
+                    print("PLEASE ENTER SECRETS IN secrets.txt file in the current directory!")
                 time_now()
-                print("QUITTING")
+                if not args.quiet:
+                    print("QUITTING")
                 exit(4)
             
         # place holder gets called when we use this! (default secret thingie)
@@ -359,13 +379,16 @@ class guiProj:
             save_name_map = str(self.save_map_entry.get())
             time_now()
             if save_name_map == "":
+                if not args.quiet:
+                    time_now()
+                    print("NO FILE NAME GIVEN!..\n SO NOT SAVING!")
+            else:
+                if not args.quiet:
+                    print("FILE NAME GOT !!: ",save_name_map)
+        except:
+            if not args.quiet:
                 time_now()
                 print("NO FILE NAME GIVEN!..\n SO NOT SAVING!")
-            else:
-                print("FILE NAME GOT !!: ",save_name_map)
-        except:
-            time_now()
-            print("NO FILE NAME GIVEN!..\n SO NOT SAVING!")
             save_name_map=None
 
         # To get all the values and show the map!
@@ -400,13 +423,14 @@ class guiProj:
         LIMIT = 1000
         address = all_values[2]                                   #input("Enter the location/ city :")
         time_now()
-        print('Your credentails:')
-        time_now()
-        print('CLIENT_ID: ' + CLIENT_ID)
-        time_now()
-        print('CLIENT_SECRET:' + CLIENT_SECRET)
-        time_now()
-        print('Location of your choice : ', address)
+        if not args.quiet:
+            print('Your credentails:')
+            time_now()
+            print('CLIENT_ID: ' + CLIENT_ID)
+            time_now()
+            print('CLIENT_SECRET:' + CLIENT_SECRET)
+            time_now()
+            print('Location of your choice : ', address)
 
         geolocator = Nominatim(timeout = 10)
         try:
@@ -414,24 +438,27 @@ class guiProj:
             location = geolocator.geocode(address)
             latitude = location.latitude
             longitude = location.longitude
-            time_now()
-            print(latitude, longitude)
+            if not args.quiet:
+                time_now()
+                print(latitude, longitude)
         except:
-            time_now()
-            print("CHECK INTERNET CONNECTION!\n ELSE YOUR NET IS NOT IN FULL 3/4G")
+            if not args.quiet:
+                time_now()
+                print("CHECK INTERNET CONNECTION!\n ELSE YOUR NET IS NOT IN FULL 3/4G")
             # directly closes the application
             exit(4)
 
         
         RADIUS = int(all_values[3])
-
-        time_now()
-        print("Total preference list : ",pref_list)
+        if not args.quiet:
+            time_now()
+            print("Total preference list : ",pref_list)
 
         # To clean the list if by chance someone has given unnecessary values or empty values or unused text entry box
         pref_list = list(filter(None, pref_list))
-        time_now()
-        print("New pref list : ",pref_list)
+        if not args.quiet:
+            time_now()
+            print("New pref list : ",pref_list)
 
         map_address = folium.Map(location=[latitude, longitude], zoom_start=11)
         marker_cluster = MarkerCluster().add_to(map_address)
@@ -443,23 +470,26 @@ class guiProj:
         for item_pref in pref_list:
             url = 'https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}&ll={},{}&v={}&query={}&radius={}&limit={}'.format(CLIENT_ID, CLIENT_SECRET, latitude, longitude, VERSION, item_pref, RADIUS, LIMIT)
             try :
-                time_now()
-                print("url : ",url)
+                if not args.quiet:
+                    time_now()
+                    print("url : ",url)
                 results = requests.get(url).json()
                 # assign relevant part of JSON to venues
                 venues = results['response']['venues']
 
                 # tranform venues into a dataframe
                 dataframe = json_normalize(venues)
-                time_now()
-                print(dataframe.head())
+                if not args.quiet:
+                    time_now()
+                    print(dataframe.head())
                 try:
                     # keep only columns that include venue name, and anything that is associated with location
                     filtered_columns = ['name', 'categories'] + [col for col in dataframe.columns if col.startswith('location.')] + ['id']
                     dataframe_filtered = dataframe.loc[:, filtered_columns]
                 except:
-                    time_now()
-                    print("Something went wrong!")
+                    if not args.quiet:
+                        time_now()
+                        print("Something went wrong!")
                     continue
                 # function that extracts the category of the venue
                 def get_category_type(row):
@@ -477,8 +507,9 @@ class guiProj:
                 try:
                     dataframe_filtered['categories'] = dataframe_filtered.apply(get_category_type, axis=1)
                 except:
-                    time_now()
-                    print("Something went wrong!")
+                    if not args.quiet:
+                        time_now()
+                        print("Something went wrong!")
                     continue
 
                 # clean column names by keeping only last term
@@ -491,13 +522,16 @@ class guiProj:
                 data_frame = dataframe_filtered.copy()
                 list_df.append(data_frame)
             except:
-                time_now()
-                print("Preference : ",item_pref," doesn't exists!!!")
-        time_now()
-        print(list_df)
+                if not args.quiet:
+                    time_now()
+                    print("Preference : ",item_pref," doesn't exists!!!")
+        if not args.quiet:
+            time_now()
+            print(list_df)
         # create map latitude and longitude values
-        time_now()
-        print("MAP SELECTED :=> ",self.dropdown_map_select.get())
+        if not args.quiet:
+            time_now()
+            print("MAP SELECTED :=> ",self.dropdown_map_select.get())
         
         MAP_FINAL = folium.Map(location=[latitude, longitude], tiles=str(self.dropdown_map_select.get()),zoom_start=11)
         # configuration for the dafault map to be created!
@@ -510,61 +544,69 @@ class guiProj:
             col_border.append(OVER_COL)
 
             # Check whether the values are actually present or not!
-
             # for latitudes
             try:
                 len_data = len(list_item['lat'])
-                time_now()
-                print("TOTAL DATA FETCHED",len_data)
-                time_now()
-                print(list_item['lat'])
+                if not args.quiet:
+                    time_now()
+                    print("TOTAL DATA FETCHED",len_data)
+                    time_now()
+                    print(list_item['lat'])
             except:
                 #pass
-                print("NOT got any 'lat' values! using default")
+                if not args.quiet:
+                    print("NOT got any 'lat' values! using default")
                 list_item['lat'] = [None]*int(len_data)
             
             # for longitudes
             try:
-                
-                time_now()
-                print("TOTAL DATA FETCHED",len(list_item['lng']))
-                time_now()
-                print(list_item['lng'])
+                if not args.quiet:
+                    time_now()
+                    print("TOTAL DATA FETCHED",len(list_item['lng']))
+                    time_now()
+                    print(list_item['lng'])
             except:
                 #pass
-                print("NOT got any 'lng' values! using default")
+                if not args.quiet:
+                    print("NOT got any 'lng' values! using default")
                 list_item['lng'] = [None]*int(len_data)
-                time_now()
-                print(list_item['lng'])
+                if not args.quiet:
+                    time_now()
+                    print(list_item['lng'])
             
             # for categories
             
             try:
-                time_now()
-                print("TOTAL DATA FETCHED",len(list_item['categories']))
-                time_now()
-                print(list_item['categories'])
+                if not args.quiet:
+                    time_now()
+                    print("TOTAL DATA FETCHED",len(list_item['categories']))
+                    time_now()
+                    print(list_item['categories'])
             except:
                 #pass
-                print("NOT got any 'categories' values! using default")
+                if not args.quiet:
+                    print("NOT got any 'categories' values! using default")
                 list_item['categories'] = [None]*int(len_data)
-                time_now()
-                print(list_item['categories'])
+                if not args.quiet:
+                    time_now()
+                    print(list_item['categories'])
             
             # for postalCode values
 
             try:
-                
-                time_now()
-                print("TOTAL DATA FETCHED",len(list_item['postalCode']))
-                time_now()
-                print(list_item['postalCode'])
+                if not args.quiet:
+                    time_now()
+                    print("TOTAL DATA FETCHED",len(list_item['postalCode']))
+                    time_now()
+                    print(list_item['postalCode'])
             except:
                 #pass
-                print("NOT got any 'postalCode' values! using default")
+                if not args.quiet:
+                    print("NOT got any 'postalCode' values! using default")
                 list_item['postalCode'] = [None]*int(len_data)
-                time_now()
-                print(list_item['postalCode'])
+                if not args.quiet:
+                    time_now()
+                    print(list_item['postalCode'])
             
             
             for lat, lng, cat, postcode in zip(list_item['lat'], list_item['lng'],  list_item['categories'],  list_item['postalCode']):
@@ -588,8 +630,10 @@ class guiProj:
                 <svg height="10" width="10">
                 <circle cx="5" cy="5" r="4" stroke="{}" stroke-width="3" fill="{}" />
                 </svg><br/> """.format(str(var1),str(var3),str(var2))
-            time_now()
-            print(dots_html)
+            
+            if not args.quiet:
+                time_now()
+                print(dots_html)
         legend_html = """
                 <div style = "position: fixed; top: 5px; left: 900px; z-index:9999;">
                     <h1 ><i style="color:#c6ae0d; font face=Verdana,Arial,Helvetica "> WISP </i></h1> 
@@ -613,7 +657,8 @@ class guiProj:
                 </div>
                 """.format(str(dots_html))
         time_now()
-        print(legend_html)
+        if not args.quiet:
+            print(legend_html)
 
         MAP_FINAL.get_root().html.add_child(folium.Element(legend_html))
         # setting port addr, localhost for the custom http server
@@ -696,8 +741,9 @@ class guiProj:
             folium_map_html = f.read()
         global root
         root.destroy()
-        time_now()
-        print("Destroying window!! exiting from GUI to Web - Browser")
+        if not args.quiet:
+            time_now()
+            print("Destroying window!! exiting from GUI to Web - Browser")
 
         # to get the name of the file to be saved!
         if save_name_map == None:
@@ -707,18 +753,22 @@ class guiProj:
             if save_name_map==None:
                 pass
             else:
-                time_now()
-                print("WRITING TO HTML FILE !!!")
+                if not args.quiet:
+                    time_now()
+                    print("WRITING TO HTML FILE !!!")
                 time_now()
                 with open(name_final, 'w') as file_:
                     file_.write(folium_map_html)
         try:
-            time_now()
+            if not args.quiet:
+                time_now()
             os.remove(".html")
-            print("CACHES REMOVED!")
+            if not args.quiet:
+                print("CACHES REMOVED!")
         except:
-            time_now()
-            print("...CLEANING CACHES!")
+            if not args.quiet:
+                time_now()
+                print("...CLEANING CACHES!")
         
         run_html_server(folium_map_html)
 
