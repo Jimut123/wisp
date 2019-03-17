@@ -198,7 +198,7 @@ else:
     ██║███╗██║██║╚════██║██╔═══╝       
     ╚███╔███╔╝██║███████║██║                 
     ╚══╝╚══╝ ╚═╝╚══════╝╚═╝  	0.0.8-beta 
-                    JIMUT(TM)  
+                                JIMUT(TM)  
             """
         s1 += '\x1b[%sm %s \x1b[0m' % (format, banner)
         if not args.quiet:
