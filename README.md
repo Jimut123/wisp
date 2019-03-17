@@ -34,6 +34,10 @@ This software can be used for any number of preferences and for any location pro
 
 We have used python3 for building the software from scratch which includes many libraries. We have also used tkinter to build the custom-made GUI. It uses folium to plot the cluster in map, and foursquare API to collect the updated data for cleaning and then plotting.
 
+## Credentials 
+
+Make an account in [Foursquare](https://foursquare.com/) to get the key and ID, which is used for this application to fetch the data.
+
 ## Installation
 
 ```
@@ -69,19 +73,19 @@ IPython
 
 ## Features
 
-#### *WISP* comes in 3 themes :
+* *WISP* comes in 3 themes :
 
 
 <table border="1px" align="center">
     <tr>
         <td align="center">
-            <img src="img/classic_wisp_theme.png" height="400px" width="380px" alt="classic -t 1">
+            <img src="img/classic_wisp_theme.png" height="400px" width="400px" alt="classic -t 1">
         </td>
         <td align="center">
-            <img src="img/light_wisp_theme.png" height="400px" width="380px" alt="light -t 2">
+            <img src="img/light_wisp_theme.png" height="400px" width="400px" alt="light -t 2">
         </td align="center">
         <td>
-            <img src="img/dark_wisp_theme.png" height="400px" width="380px" alt="light -t 3">
+            <img src="img/dark_wisp_theme.png" height="400px" width="400px" alt="light -t 3">
         </td>
     </tr>
     <tr>
@@ -97,7 +101,7 @@ IPython
     </tr>
 </table>
 
-#### *WISP* have 5 maps, we can visualise it in any one of the five maps
+* *WISP* have 5 maps, we can visualise it in any one of the five maps
 
 <table border="1px">
     <tr>
@@ -117,11 +121,11 @@ IPython
     </tr>
 </table>
 
-#### We can save the map for later use by giving the name in 'save map as' entry.
+* We can save the map for later use by giving the name in 'save map as' entry.
 
-#### We can pass optional arguments to keep the terminal clean ``` -q``` for quiet running of application.
+* We can pass optional arguments to keep the terminal clean ``` -q``` for quiet running of application.
 
-#### We can also use a file named as [secrets.txt](secrets.txt), to store the foursquare ID and client ID in the folder where you are running the wisp application, so that you don't have to type this again and again, and use the button "use default secrets" to fill up the client ID and foursquare ID automatically. It is a simple JSON file, and just have to store the ID and secrets without any spaces.
+* We can also use a file named as [secrets.txt](secrets.txt), to store the foursquare ID and client ID in the folder where you are running the wisp application, so that you don't have to type this again and again, and use the button "use default secrets" to fill up the client ID and foursquare ID automatically. It is a simple JSON file, and just have to store the ID and secrets without any spaces.
 
 
 
