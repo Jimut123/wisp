@@ -109,19 +109,26 @@ IPython
 
 <table border="1px">
     <tr>
-        <td align="center"> Mapbox Bright </td>
+        <td><img src="img/maps/kolkata_mb_4.png" height="520px" width="650px" alt="map box - kolkata"></td>
+        <td><img src="img/maps/kolkata_stamen_toner_4.png" height="520px" width="650px" alt="stamen toner - kolkata"></td>
     </tr>
     <tr>
-        <td align="center"> Stamen Toner </td>
+        <td align="center"> Mapbox Bright - Kolkata with 4 preference </td>
+        <td align="center"> Stamen Toner - Kolkata with 4 preference</td>
+    </tr>
+     <tr>
+        <td><img src="img/maps/kolkata_st_3.png" height="520px" width="650px" alt="map box - kolkata"></td>
+        <td><img src="img/maps/Pune_osm_4.png" height="520px" width="650px" alt="stamen toner - kolkata"></td>
     </tr>
     <tr>
-        <td align="center"> Stamen Terrain </td>
+        <td align="center"> Stamen Terrain - Kolkata with 3 preference </td>
+        <td align="center"> OpenStreetMap - Pune with 4 preference </td>
     </tr>
     <tr>
-        <td align="center"> OpenStreetMap </td>
+        <td colspan="2" align="center"><img src="img/maps/canada_mcr_5.png" height="600px" width="1000px" alt="stamen toner - kolkata"></td>
     </tr>
     <tr>
-        <td align="center"> Mapbox Control Room </td>
+        <td colspan="2" align="center"> Mapbox Control Room - Canada with 5 preference </td>
     </tr>
 </table>
 
@@ -130,20 +137,4 @@ IPython
 * We can pass optional arguments to keep the terminal clean ``` -q``` for quiet running of application.
 
 * We can also use a file named as [secrets.txt](secrets.txt), to store the foursquare ID and client ID in the folder where you are running the wisp application, so that you don't have to type this again and again, and use the button "use default secrets" to fill up the client ID and foursquare ID automatically. It is a simple JSON file, and just have to store the ID and secrets without any spaces.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
