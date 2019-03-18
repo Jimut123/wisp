@@ -26,6 +26,10 @@ According to any standard dictionary, Wisp means :
 
 So, it is "a bunch of something", in our case it is the bunch of data points, clustered as hotspots. This doesn't uses any advanced machine learning algorithm, but simple ```MarkerCluster()``` algorithm, built-in in Folium map API.
 
+## Video 
+
+[![youtube-video](https://www.youtube.com/watch?v=__q1H-RrCu8&t=0s)](https://www.youtube.com/watch?v=__q1H-RrCu8&t=0s)
+
 ## Scope
 
 This software can be used for any number of preferences and for any location provided the data exists in [FourSquare API](https://foursquare.com/). The reason behind choosing foursquare API is that there is rich availability of data and a good community to update data.
