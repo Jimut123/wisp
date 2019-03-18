@@ -28,7 +28,7 @@ So, it is "a bunch of something", in our case it is the bunch of data points, cl
 
 ## Video 
 
-[![youtube-video](https://www.youtube.com/watch?v=__q1H-RrCu8&t=0s)](https://www.youtube.com/watch?v=__q1H-RrCu8&t=0s)
+[![youtube-video](https://github.com/Jimut123/wisp/blob/master/img/wisp_yt.png)](https://www.youtube.com/watch?v=__q1H-RrCu8&t=0s)
 
 ## Scope
 
