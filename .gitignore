@@ -1,5 +1,3 @@
 dist/*
 build/*
 wisp.egg-info/*
-test_Scripts/*
-img/*

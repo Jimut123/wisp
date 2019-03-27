@@ -1,9 +1,0 @@
-requests
-datetime
-IPython
-pandas
-folium
-geopy
-numpy
-wget
-pip
