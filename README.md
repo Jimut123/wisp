@@ -36,7 +36,7 @@ optional arguments:
 Make an account in [Foursquare](https://foursquare.com/) to get the key and ID, which is used for this application to fetch the data.
 
 
-Make a file secrets.txt with the following contents (not mandatory, only for using "use default secrets" button):=>
+Make a file secrets.txt with the following contents (not mandatory, only for using "use default secrets" button) on the directory which you want to run wisp:=>
 ```
 {
     "client_id":"your-client-id here",
