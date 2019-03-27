@@ -1,5 +1,4 @@
 dist/*
-tags
 build/*
 wisp.egg-info/*
 test_Scripts/*
