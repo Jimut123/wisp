@@ -1,4 +1,8 @@
 """
+#   Copyright (c) 2019, Jimut Bahan Pal. All Rights Reserved.
+#
+#   Please refer to the GNU GENERAL PUBLIC LICENSE for more.
+#
 #   This is the application (probably basic) to find the location (almost any) in any Country 
 #   according to the choices of your preference. Uses Foursquare API to get the data (geojson),
 #   also uses tkinter GUI for accepting data. Please provide the Access key for the API
@@ -7,8 +11,6 @@
 #   
 #   Caution: Please don't blame me if this doesn't works, cause the data may not be present for 
 #            some location, since everyone will use free services of foursquare API.
-#
-#   @Copyright :: Don't share this software without the permission of the author
 #
 #   e-mail : jimutbahanpal@yahoo.com
 #   website : https://jimut123.github.io
@@ -43,8 +45,9 @@ import folium # plotting library
 import json
 import os
 
-# print('Folium installed')
-# print('Libraries imported.')
+"""
+The arguments that are provided to the application
+"""
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-q","--quiet", help="will not display anything in the terminal",
@@ -54,23 +57,17 @@ parser.add_argument("-t","--theme", help="to select theme [1] classic [2] light 
 parser.add_argument("-v","-V","--version", help="displays version",
                     action="store_true")
 args = parser.parse_args()
-"""
-if not args.quiet:
-    print("NOT QUIET")
-if args.theme == None:
-    print("USING DEFAULT THEME")
-else:
-    print("THEME : ",args.theme)
-"""
 
 if args.version:
     print("version 0.0.8-beta Jimut (TM)")
 else:
     if not args.quiet:
-        print('Starting application ... Necessary libraries imported.')
-
-
-
+        # the starting of the application dialogue
+        print('Starting application ... Necessary libraries imported. \n\n JIMUT (TM)')
+    
+    """
+        The 3 themes for WISP application.
+    """
     if args.theme == None or args.theme == 1:
         # print("USING DEFAULT THEME")
         # defining JIMUT's classic theme for wisp : 
@@ -176,7 +173,7 @@ else:
                 print("NO SECRETS PRESENT, please enter it in text file secrets.txt ...\n Else use the GUI to input secrets!")
             
 
-
+    # returns the current time
     def time_now():
         format = "1;32;40"
         s1 = ''
@@ -186,7 +183,9 @@ else:
             print("running app : {} ".format(s1),end="")
 
 
-
+    """
+    The banner theme for WISP application
+    """
     def banner_wisp():
         format = "1;33;40"
         s1 = ''
@@ -205,22 +204,18 @@ else:
             print(s1)
 
     """
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-save',action='store_true',dest='save_file_wisp',help='To save the output in <filename>.html',default=False)
-    parser.add_argument('-h',action='store_true',dest='help_wisp',help='Help',default=False)
-    args = parser.parse_args()
-    if args.save_file_wisp == '-save':
-        print("No output file specified")
-
-    if args.help_wisp == '-h':
-        print("LOL")
+    The main class for the WISP application.
+    Contains the GUI and the Custom made HTTP map generator as different modules.
     """
-
-
     class guiProj:
+        """
+        The actual app class
+        """
         def __init__(self, master):
+            """
+            The constructor for creating the GUI of the app using tkinter!
+            """
             banner_wisp()
-            # the constructor for creating the GUI of the app using tkinter!
             # this is creating the padding for the input/label text etc.
             for i in range(100):
                 master.columnconfigure(i, pad=3)    
@@ -231,6 +226,9 @@ else:
             master.geometry("430x460")
 
             # Shortened version of the code!
+            """
+            This part creates the GUI for the upper labels and text box of the GUI
+            """
             msg_s = ["    CLIENT ID    ","    FOURSQUARE SECRET    ","    LOC/CITY    ","    RADIUS (in meters) >= 1000    ","    NO. OF PREFERENCE    "]
             i_var = 0
 
@@ -288,15 +286,11 @@ else:
                         # entry widget
                         self.entry_pref[iter_] = Entry(frame,background=color_preference_entry,foreground=color_preference_entry_fg)
                         self.entry_pref[iter_].grid(row=5+iter_+1, column=1, sticky=W+N)
-                    """
-                    for row in range(100):
-                        tk.Label(frame, text="%s" % row, width=3, borderwidth="1", 
-                                relief="solid").grid(row=row, column=0)
-                        t="this is the second column for row %s" %row
-                        tk.Label(frame, text=t).grid(row=row, column=1)
-                        tk.Entry(frame).grid(row=row, column=2)
-                    """
-                
+
+                """
+                This part creates the GUI for the upper labels and text box of the GUI
+                """
+
                 canvas = tk.Canvas(master, borderwidth=0,background=color_preference_canvas)
                 
                 canvas.config(width=250, height=200)
@@ -304,16 +298,20 @@ else:
                 frame = tk.Frame(canvas,background=color_preference_canvas)
                 vsb = tk.Scrollbar(master, orient="vertical", command=canvas.yview, background=color_pref_scrollbar)
                 canvas.configure(yscrollcommand=vsb.set)
+
                 # for the scrollbar
                 vsb.grid(row=8, column=1,rowspan=int(get_pref_no), sticky="nsw")
+
                 # for the grid
                 canvas.grid(row=8,column=0,rowspan=1,sticky="nsew")
                 canvas.create_window((4,4), window=frame, anchor="nw")
                 frame.bind("<Configure>", lambda event, canvas=canvas: onFrameConfigure(canvas))
                 populate(frame)
+
                 # disabling the button! for one-time use!
                 self.submit_pref_buttton.configure(state=DISABLED)
 
+                # making different types of maps for more feature rich visualizations
                 MAP_TYPES = ["Mapbox Bright","Stamen Toner","Stamen Terrain","OpenStreetMap","Mapbox Control Room"]
 
                 self.label_select_map = Label(master, text="SELECT MAP-TYPE",foreground=color_label_select_map_fg,background=color_label_select_map)
@@ -342,14 +340,10 @@ else:
                 self.show_map_button.grid(row=int(get_pref_no)+10,column=1,columnspan=1, sticky=W+E)
 
 
-
-
             def def_sec():
-                # this function sets the default secrets!
+                # this function sets the default secrets by reading the file secrets.txt, the secrets are stored as JSON
 
                 global def_sec_dummy
-
-                
                 try:
                     test1,test2 =get_json_secrets()
                     def_sec_dummy = 1
