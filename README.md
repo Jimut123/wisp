@@ -85,7 +85,7 @@ Make a file secrets.txt with the following contents (not mandatory, only for usi
     </tr>
     <tr>
         <td align="center"> <a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/8f93bfaf/python/wisp_things/test_scripts/maps/kolkata_mb_4.html" target="_blank" alt="mapbox bright ">Mapbox Bright - Kolkata with 4 preference </a></td>
-        <td align="center"> Stamen Toner - Kolkata with 4 preference</td>
+        <td align="center"><a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/8f93bfaf/python/wisp_things/test_scripts/maps/kolkata_st_4.html" target="_blank" alt="stamen toner"> Stamen Toner - Kolkata with 4 preference</a></td>
     </tr>
      <tr>
         <td><img src="img/maps/kolkata_st_3.png" height="520px" width="650px" alt="map box - kolkata"></td>
@@ -94,7 +94,7 @@ Make a file secrets.txt with the following contents (not mandatory, only for usi
     <tr>
         <td align="center"> <a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/8f93bfaf/python/wisp_things/test_scripts/maps/kolkata_st_3.html" alt="stammen terrain" target="_blank">Stamen Terrain - Kolkata with 3 preference </a></td>
         <td align="center"> 
-        <a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/8f93bfaf/python/wisp_things/test_scripts/Pune_mb_4.html" target="_blank" alt="openstreet map">OpenStreetMap - Pune with 4 preference </a></td>
+        <a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/8f93bfaf/python/wisp_things/test_scripts/maps/Pune_osm_4.html" target="_blank" alt="openstreet map">OpenStreetMap - Pune with 4 preference </a></td>
     </tr>
     <tr>
         <td colspan="2" align="center"><img src="img/maps/canada_mcr_5.png" height="600px" width="1000px" alt="stamen toner - kolkata"></td>
