@@ -11,6 +11,106 @@
                                 JIMUT(TM) 
 ```
 
+## Installation
+
+```
+$ git clone https://github.com/Jimut123/wisp
+$ cd wisp
+$ sudo pip install -r requirements.txt
+$ sudo python setup.py install
+$ wisp -h
+usage: wisp [-h] [-q] [-t {1,2,3}] [-v]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -q, --quiet           will not display anything in the terminal
+  -t {1,2,3}, --theme {1,2,3}
+                        to select theme [1] classic [2] light [3] dark
+  -v, -V, --version     displays version
+```
+
+
+
+## Credentials 
+
+Make an account in [Foursquare](https://foursquare.com/) to get the key and ID, which is used for this application to fetch the data.
+
+
+Make a file secrets.txt with the following contents (not mandatory, only for using "use default secrets" button):=>
+```
+{
+    "client_id":"your-client-id here",
+    "client_secret":"your-client-secret here"
+}
+```
+
+
+
+## Features
+
+* **WISP** comes in 3 themes :
+
+
+<table border="1px" align="center">
+    <tr>
+        <td align="center">
+            <img src="img/classic_wisp_theme.png" height="400px" width="400px" alt="classic -t 1">
+        </td>
+        <td align="center">
+            <img src="img/light_wisp_theme.png" height="400px" width="400px" alt="light -t 2">
+        </td align="center">
+        <td>
+            <img src="img/dark_wisp_theme.png" height="400px" width="400px" alt="light -t 3">
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+             -t 1
+        </td>
+        <td align="center">
+             -t 2
+        </td>
+        <td align="center">
+             -t 3
+        </td>
+    </tr>
+</table>
+
+* **WISP** have 5 maps, we can visualise it in any one of the five maps
+
+<table border="1px">
+    <tr>
+        <td><img src="img/maps/kolkata_mb_4.png" height="520px" width="650px" alt="map box - kolkata"></td>
+        <td><img src="img/maps/kolkata_stamen_toner_4.png" height="520px" width="650px" alt="stamen toner - kolkata"></td>
+    </tr>
+    <tr>
+        <td align="center"> Mapbox Bright - Kolkata with 4 preference </td>
+        <td align="center"> Stamen Toner - Kolkata with 4 preference</td>
+    </tr>
+     <tr>
+        <td><img src="img/maps/kolkata_st_3.png" height="520px" width="650px" alt="map box - kolkata"></td>
+        <td><img src="img/maps/Pune_osm_4.png" height="520px" width="650px" alt="stamen toner - kolkata"></td>
+    </tr>
+    <tr>
+        <td align="center"> Stamen Terrain - Kolkata with 3 preference </td>
+        <td align="center"> OpenStreetMap - Pune with 4 preference </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><img src="img/maps/canada_mcr_5.png" height="600px" width="1000px" alt="stamen toner - kolkata"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"> Mapbox Control Room - Canada with 5 preference </td>
+    </tr>
+</table>
+
+* We can save the map for later use by giving the name in 'save map as' entry.
+
+* We can pass optional arguments to keep the terminal clean ``` -q``` for quiet running of application.
+
+* We can also use a file named as [secrets.txt](secrets.txt), to store the foursquare ID and client ID in the folder where you are running the wisp application, so that you don't have to type this again and again, and use the button "use default secrets" to fill up the client ID and foursquare ID automatically. It is a simple JSON file, and just have to store the ID and secrets without any spaces.
+
+
+
 
 ## Why WISP ?
 
@@ -133,91 +233,6 @@ This software can be used for any number of preferences and for any location pro
 
 We have used python3 for building the software from scratch which includes many libraries. We have also used tkinter to build the custom-made GUI. It uses folium to plot the cluster in map, and foursquare API to collect the updated data for cleaning and then plotting.
 
-## Credentials 
-
-Make an account in [Foursquare](https://foursquare.com/) to get the key and ID, which is used for this application to fetch the data.
-
-## Installation
-
-```
-$ git clone https://github.com/Jimut123/wisp
-$ cd wisp
-$ sudo pip install -r requirements.txt
-$ sudo python setup.py install
-$ wisp -h
-usage: wisp [-h] [-q] [-t {1,2,3}] [-v]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -q, --quiet           will not display anything in the terminal
-  -t {1,2,3}, --theme {1,2,3}
-                        to select theme [1] classic [2] light [3] dark
-  -v, -V, --version     displays version
-```
-
-
-## Features
-
-* **WISP** comes in 3 themes :
-
-
-<table border="1px" align="center">
-    <tr>
-        <td align="center">
-            <img src="img/classic_wisp_theme.png" height="400px" width="400px" alt="classic -t 1">
-        </td>
-        <td align="center">
-            <img src="img/light_wisp_theme.png" height="400px" width="400px" alt="light -t 2">
-        </td align="center">
-        <td>
-            <img src="img/dark_wisp_theme.png" height="400px" width="400px" alt="light -t 3">
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-             -t 1
-        </td>
-        <td align="center">
-             -t 2
-        </td>
-        <td align="center">
-             -t 3
-        </td>
-    </tr>
-</table>
-
-* **WISP** have 5 maps, we can visualise it in any one of the five maps
-
-<table border="1px">
-    <tr>
-        <td><img src="img/maps/kolkata_mb_4.png" height="520px" width="650px" alt="map box - kolkata"></td>
-        <td><img src="img/maps/kolkata_stamen_toner_4.png" height="520px" width="650px" alt="stamen toner - kolkata"></td>
-    </tr>
-    <tr>
-        <td align="center"> Mapbox Bright - Kolkata with 4 preference </td>
-        <td align="center"> Stamen Toner - Kolkata with 4 preference</td>
-    </tr>
-     <tr>
-        <td><img src="img/maps/kolkata_st_3.png" height="520px" width="650px" alt="map box - kolkata"></td>
-        <td><img src="img/maps/Pune_osm_4.png" height="520px" width="650px" alt="stamen toner - kolkata"></td>
-    </tr>
-    <tr>
-        <td align="center"> Stamen Terrain - Kolkata with 3 preference </td>
-        <td align="center"> OpenStreetMap - Pune with 4 preference </td>
-    </tr>
-    <tr>
-        <td colspan="2" align="center"><img src="img/maps/canada_mcr_5.png" height="600px" width="1000px" alt="stamen toner - kolkata"></td>
-    </tr>
-    <tr>
-        <td colspan="2" align="center"> Mapbox Control Room - Canada with 5 preference </td>
-    </tr>
-</table>
-
-* We can save the map for later use by giving the name in 'save map as' entry.
-
-* We can pass optional arguments to keep the terminal clean ``` -q``` for quiet running of application.
-
-* We can also use a file named as [secrets.txt](secrets.txt), to store the foursquare ID and client ID in the folder where you are running the wisp application, so that you don't have to type this again and again, and use the button "use default secrets" to fill up the client ID and foursquare ID automatically. It is a simple JSON file, and just have to store the ID and secrets without any spaces.
 
 
 ## References
