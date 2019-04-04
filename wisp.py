@@ -60,6 +60,7 @@ args = parser.parse_args()
 
 if args.version:
     print("version 0.0.8-beta Jimut (TM)")
+    exit(2)
 else:
     if not args.quiet:
         # the starting of the application dialogue
