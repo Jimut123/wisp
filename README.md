@@ -28,7 +28,11 @@ optional arguments:
                         to select theme [1] classic [2] light [3] dark
   -v, -V, --version     displays version
 ```
+## or
 
+```
+pip install wisp
+```
 
 
 ## Credentials 
