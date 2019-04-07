@@ -32,6 +32,9 @@ optional arguments:
 
 ```
 pip install wisp
+git clone https://github.com/Jimut123/wisp
+cd wisp
+python wisp.py -t 2
 ```
 
 
