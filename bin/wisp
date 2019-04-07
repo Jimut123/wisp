@@ -1,0 +1,12 @@
+#!/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'wisp==0.0.8b0','console_scripts','wisp'
+__requires__ = 'wisp==0.0.8b0'
+import re
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(
+        load_entry_point('wisp==0.0.8b0', 'console_scripts', 'wisp')()
+    )
