@@ -31,10 +31,10 @@ optional arguments:
 ## or
 
 ```
-pip install wisp
-git clone https://github.com/Jimut123/wisp
-cd wisp
-python wisp.py -t 2
+$ pip install wisp
+$ git clone https://github.com/Jimut123/wisp
+$ cd wisp
+$ python wisp.py -t 2
 ```
 
 
