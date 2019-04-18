@@ -637,9 +637,9 @@ else:
                     time_now()
                     print(dots_html)
             legend_html = """
-                    <div style = "position: fixed; top: 5px; left: 900px; z-index:9999;">
+                    <center>
                         <h1 ><i style="color:#c6ae0d; font face=Verdana,Arial,Helvetica "> WISP </i></h1> 
-                    </div>
+                    </center>
                     <div style="position: fixed; 
                     bottom: 50px; left: 50px;  
                     border:2px solid grey; z-index:9999; font-size:14px;">&nbsp; 
