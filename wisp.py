@@ -639,7 +639,7 @@ else:
             legend_html = """
                     <center>
                         <h1 ><i style="color:#c6ae0d; font face=Verdana,Arial,Helvetica "> WISP </i></h1> 
-                    </center style="z-index:9999;">
+                    </center>
                     <div style="position: fixed; 
                     bottom: 50px; left: 50px;  
                     border:2px solid grey; z-index:9999; font-size:14px;">&nbsp; 
