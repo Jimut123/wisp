@@ -40,7 +40,7 @@ $ python wisp.py -t 2
 
 ## Credentials 
 
-Make an account in [Foursquare](https://foursquare.com/) to get the key and ID, which is used for this application to fetch the data.
+Make an account in [Foursquare](https://developer.foursquare.com/) to get the key and ID, which is used for this application to fetch the data.
 
 
 Make a file secrets.txt with the following contents (not mandatory, only for using "use default secrets" button) on the directory which you want to run wisp:=>
