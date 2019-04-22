@@ -657,7 +657,18 @@ else:
                             Author : jimutbahanpal@yahoo.com 
                         </b>
                     </div>
-                    """.format(str(dots_html))
+                    <div style="position: fixed; 
+                    top: 70px; left: 50px;  
+                    z-index:9999; font-size:15px;
+                    "> 
+                        <b style="color:#16842c" style="align: justified">
+                            Location: {} <br/>
+                            Lat, Lon: {},{} <br/>
+			                Radius: {} <br/>
+                            Date: {} <br/>
+                        </b>
+                    </div> 
+                    """.format(str(dots_html),address,latitude,longitude,RADIUS,datetime.now().isoformat(timespec='seconds'))
             time_now()
             if not args.quiet:
                 print(legend_html)
