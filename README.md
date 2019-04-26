@@ -37,7 +37,7 @@ $ cd wisp
 $ python wisp.py -t 2
 ```
 
-## Some outputs/ Visualisations for D15HW4SH3R5:
+## Some outputs/ Visualisations for D15HW4SH3R5 (who doesn't trust this APP, zoom out it might work) :
 *   [Beijing_6_mcr](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/Beijing_6_mcr.html)
 *   [Kolkata_7_st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/Kolkata_7_st.html)
 *   [Lebanon_mcr_12](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/Lebanon_mcr_12.html)
