@@ -37,6 +37,41 @@ $ cd wisp
 $ python wisp.py -t 2
 ```
 
+## Some outputs/ Visualisations for Dishwashers :) :
+*   [Beijing_6_mcr](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/Beijing_6_mcr.html)
+*   [Kolkata_7_st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/Kolkata_7_st.html)
+*   [Lebanon_mcr_12](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/Lebanon_mcr_12.html)
+*   [Moscow_5_mb](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/Moscow_5_mb.html)
+*   [Mumbai_7_osm](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/Mumbai_7_osm.html)
+*   [NewYork_10_StamenTerrain](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/NewYork_10_StamenTerrain.html)
+*   [NewYork_OSM_4](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/NewYork_OSM_4.html)
+*   [Paris_8_st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/Paris_8_st.html)
+*   [bangalore_4_st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/bangalore_4_st.html)
+*   [beijing_8_st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/beijing_8_st.html)
+*   [capetown_5_st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/capetown_5_st.html)
+*   [chicago_5_osm](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/chicago_5_osm.html)
+*   [islama_7_osm](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/islama_7_osm.html)
+*   [islamabad_osm_5](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/islamabad_osm_5.html)
+*   [jaipur_5_st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/jaipur_5_st.html)
+*   [jaipur_5_st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/jaipur_5_st.html)
+*   [k9st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/k9st.html)
+*   [kgp_map_4_st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/kgp_map_4_st.html)
+*   [kolkata_9_st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/kolkata_9_st.html)
+*   [kyoto_osm_10](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/kyoto_osm_10.html)
+*   [mizoram_8_st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/mizoram_8_st.html)
+*   [moscow_osm_6](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/moscow_osm_6.html)
+*   [mumbai_10](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/mumbai_10.html)
+*   [mumbai_osm](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/mumbai_osm.html)
+*   [singapore_stamterr_10](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/singapore_stamterr_10.html)
+*   [mumbai_pp](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/mumbai_pp.html)
+*   [sydney_osm_10](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/sydney_osm_10.html)
+*   [toronto_5_st](https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/toronto_5_st.html)
+
+
+## Power Point Presentation:
+
+* [PPT](paper/wisp_ppt.pdf)
+
 
 ## Credentials 
 
@@ -87,27 +122,27 @@ Make a file secrets.txt with the following contents (not mandatory, only for usi
 
 <table border="1px">
     <tr>
-        <td><img src="img/maps/kolkata_mb_4.png" height="520px" width="650px" alt="map box - kolkata"></td>
-        <td><img src="img/maps/kolkata_stamen_toner_4.png" height="520px" width="650px" alt="stamen toner - kolkata"></td>
+        <td><img src="img/maps/moscow_mb_5.png" height="520px" width="650px" alt="map box - Moscow"></td>
+        <td><img src="img/maps/kolkata_7_st.png" height="520px" width="650px" alt="stamen toner - Kolkata"></td>
     </tr>
     <tr>
-        <td align="center"> <a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/8f93bfaf/python/wisp_things/test_scripts/maps/kolkata_mb_4.html" target="_blank" alt="mapbox bright ">Mapbox Bright - Kolkata with 4 preference </a></td>
-        <td align="center"><a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/8f93bfaf/python/wisp_things/test_scripts/maps/kolkata_st_4.html" target="_blank" alt="stamen toner"> Stamen Toner - Kolkata with 4 preference</a></td>
+        <td align="center"> <a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/Moscow_5_mb.html" target="_blank" alt="mapbox bright ">Mapbox Bright - Moscow with 6 preference </a></td>
+        <td align="center"><a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/Kolkata_7_st.html" target="_blank" alt="stamen toner"> Stamen Toner - Kolkata with 7 preference</a></td>
     </tr>
      <tr>
-        <td><img src="img/maps/kolkata_st_3.png" height="520px" width="650px" alt="map box - kolkata"></td>
-        <td><img src="img/maps/Pune_osm_4.png" height="520px" width="650px" alt="stamen toner - kolkata"></td>
+        <td><img src="img/maps/singapore_stamterr_10.png" height="520px" width="650px" alt="Stamen Terrain - Singapore"></td>
+        <td><img src="img/maps/sydney_osm_10.png" height="520px" width="650px" alt="Open Street Map - Sydney"></td>
     </tr>
     <tr>
-        <td align="center"> <a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/8f93bfaf/python/wisp_things/test_scripts/maps/kolkata_st_3.html" alt="stammen terrain" target="_blank">Stamen Terrain - Kolkata with 3 preference </a></td>
+        <td align="center"> <a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/singapore_stamterr_10.html" alt="stammen terrain" target="_blank">Stamen Terrain - Singapore with 10 preference </a></td>
         <td align="center"> 
-        <a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/8f93bfaf/python/wisp_things/test_scripts/maps/Pune_osm_4.html" target="_blank" alt="openstreet map">OpenStreetMap - Pune with 4 preference </a></td>
+        <a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/sydney_osm_10.html" target="_blank" alt="openstreet map">OpenStreetMap - Pune with 4 preference </a></td>
     </tr>
     <tr>
-        <td colspan="2" align="center"><img src="img/maps/canada_mcr_5.png" height="600px" width="1000px" alt="stamen toner - kolkata"></td>
+        <td colspan="2" align="center"><img src="img/maps/lebanon_11_mcr.png" height="600px" width="1000px" alt="Mapbox control room - Lebanon"></td>
     </tr>
     <tr>
-        <td colspan="2" align="center"><a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/8f93bfaf/python/wisp_things/test_scripts/maps/canada_mcr_5.html" target="_blank" alt="mapbox canada"> Mapbox Control Room - Canada with 5 preference </a></td>
+        <td colspan="2" align="center"><a href="https://cdn.staticaly.com/gh/Jimut123/prog_backups/3cbfed98/python/wisp_things/Lebanon_mcr_12.html" target="_blank" alt="mapbox control room"> Mapbox Control Room - Lebanon with 11 preference </a></td>
     </tr>
 </table>
 
