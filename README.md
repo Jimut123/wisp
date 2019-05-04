@@ -1,4 +1,4 @@
-# Wisp : A preference based location finder app
+# Wisp : A preference based location finder app [![PyPI version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&type=6&v=0.0.08-b)](https://pypi.org/project/wisp/)
 
 
 ```
