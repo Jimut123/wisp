@@ -1,0 +1,26 @@
+{
+    "description": "<p>Version 1 using MarkerCluster</p>", 
+    "license": "other-open", 
+    "title": "Jimut123/wisp: Version 1 using MarkerCluster", 
+    "version": "v1.0", 
+    "upload_type": "software", 
+    "publication_date": "2019-06-24", 
+    "creators": [
+        {
+            "name": "Jimut Bahan Pal"
+        }
+    ], 
+    "access_right": "open", 
+    "related_identifiers": [
+        {
+            "scheme": "url", 
+            "identifier": "https://github.com/Jimut123/wisp/tree/v1.0", 
+            "relation": "isSupplementTo"
+        }, 
+        {
+            "scheme": "doi", 
+            "identifier": "10.5281/zenodo.3254835", 
+            "relation": "isVersionOf"
+        }
+    ]
+}
