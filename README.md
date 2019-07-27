@@ -4,7 +4,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
 ![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
 ![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)
-![Preprint DOI:10.31219/osf.io/y5hk9](https://osf.io/y5hk9/)
+[Preprint DOI:10.31219/osf.io/y5hk9](https://osf.io/y5hk9/)
 
 
 ```
