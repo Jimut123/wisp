@@ -450,7 +450,7 @@ else:
                 # directly closes the application
                 exit(4)
 
-            
+            dots_html = ""
             RADIUS = int(all_values[3])
             if not args.quiet:
                 time_now()
@@ -476,6 +476,7 @@ else:
                         time_now()
                         print("url : ",url)
                     results = requests.get(url).json()
+                    
                     # assign relevant part of JSON to venues
                     venues = results['response']['venues']
 
@@ -784,6 +785,7 @@ else:
                     print("...CLEANING CACHES!")
             
             run_html_server(folium_map_html)
+        
 
     def main():
         global root
