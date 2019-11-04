@@ -20,6 +20,8 @@
 
 ## Cite as
 
+[https://dx.doi.org/10.31219/osf.io/32fkd](10.31219/osf.io/32fkd)
+
 ```
 APA
 Pal, J. B. (2019, November 4). How to cluster nearest unique nodes from different classes using JJCluster in Wisp application?. https://doi.org/10.31219/osf.io/32fkd
@@ -27,8 +29,6 @@ MLA
 Pal, Jimut B. “How to Cluster Nearest Unique Nodes from Different Classes Using Jjcluster in Wisp Application?.” OSF Preprints, 4 Nov. 2019. Web.
 Chicago
 Pal, Jimut B. 2019. “How to Cluster Nearest Unique Nodes from Different Classes Using Jjcluster in Wisp Application?.” OSF Preprints. November 4. doi:10.31219/osf.io/32fkd.
-
-[https://dx.doi.org/10.31219/osf.io/32fkd](10.31219/osf.io/32fkd)
 ```
 
 
