@@ -67,21 +67,21 @@ $ python wisp.py -t 2
 
 <html>
                <ul>
-                    <li><a href="JJC_WISP/Kolkata_8.html" target="_blank" alt="Kolkata map">Kolkata with 8 preference</a> </li>
-                    <li><a href="JJC_WISP/Berlin_6.html" target="_blank" alt="berlin map">Berlin with 6 preference</a> </li>
-                    <li><a href="JJC_WISP/Tokyo_15.html" target="_blank" alt="Tokyo map"> Tokyo with 15 preference</a> </li>
-                    <li><a href="JJC_WISP/Chicago_7.html" target="_blank" alt="Chicago map"> Chicago with 7 preference</a> </li>
-                    <li><a href="JJC_WISP/Delhi_5.html" target="_blank" alt="Delhi map"> Delhi with 5 preference</a> </li>
-                    <li><a href="JJC_WISP/Hyderabad_5.html" target="_blank" alt="Hyderabad map">Hyderabad with 5 preference</a> </li>
-                    <li><a href="JJC_WISP/Islamabad_5.html" target="_blank" alt="Islamabad map">Islamabad with 5 preference</a> </li>
-                    <li><a href="JJC_WISP/Jaipur_5.html" target="_blank" alt="Jaipur map">Jaipur with 5 preference</a> </li>
-                    <li><a href="JJC_WISP/London_7.html" target="_blank" alt="London map">London with 7 preference</a> </li>
-                    <li><a href="JJC_WISP/Moscow_6.html" target="_blank" alt="Moscow map">Moscow with 6 preference</a> </li>
-                    <li><a href="JJC_WISP/Mumbai_9.html" target="_blank" alt="Mumbai map">Mumbai with 9 preference</a> </li>
-                    <li><a href="JJC_WISP/New_York_7.html" target="_blank" alt="New York map"> New York with 7 preference</a> </li>
-                    <li><a href="JJC_WISP/Singapore_7.html" target="_blank" alt="Singapore map"> Singapore with 7 preference</a> </li>
-                    <li><a href="JJC_WISP/Srinagar_4.html" target="_blank" alt="Srinagar map"> Srinagar with 4 preference</a> </li>
-                    <li><a href="JJC_WISP/vadodara_5.html" target="_blank" alt="Vadodara map">Vadodara with 5 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/Kolkata_8.html" target="_blank" alt="Kolkata map">Kolkata with 8 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/Berlin_6.html" target="_blank" alt="berlin map">Berlin with 6 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/Tokyo_15.html" target="_blank" alt="Tokyo map"> Tokyo with 15 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/Chicago_7.html" target="_blank" alt="Chicago map"> Chicago with 7 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/Delhi_5.html" target="_blank" alt="Delhi map"> Delhi with 5 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/Hyderabad_5.html" target="_blank" alt="Hyderabad map">Hyderabad with 5 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/Islamabad_5.html" target="_blank" alt="Islamabad map">Islamabad with 5 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/Jaipur_5.html" target="_blank" alt="Jaipur map">Jaipur with 5 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/London_7.html" target="_blank" alt="London map">London with 7 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/Moscow_6.html" target="_blank" alt="Moscow map">Moscow with 6 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/Mumbai_9.html" target="_blank" alt="Mumbai map">Mumbai with 9 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/New_York_7.html" target="_blank" alt="New York map"> New York with 7 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/Singapore_7.html" target="_blank" alt="Singapore map"> Singapore with 7 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/Srinagar_4.html" target="_blank" alt="Srinagar map"> Srinagar with 4 preference</a> </li>
+                    <li><a href="https://jimut123.github.io/blogs/JJC_WISP/vadodara_5.html" target="_blank" alt="Vadodara map">Vadodara with 5 preference</a> </li>
                </ul>
 
 </html>
