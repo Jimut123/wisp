@@ -1,4 +1,8 @@
 # Wisp : A preference based location finder app 
+
+#### Using [JJ-CLUSTER](https://jimut123.github.io/blogs/jjc_wisp.html)
+
+
 [![zenodo badge](https://zenodo.org/badge/DOI/10.5281/zenodo.3254836.svg)](https://zenodo.org/record/3254836#.XRDt93UzaV4) ![Contribute](https://img.shields.io/badge/-contribute-0a0a0a.svg?style=flat&colorA=0a0a0a)
 [![PyPI version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&type=6&v=0.0.08-b)](https://pypi.org/project/wisp/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
@@ -20,7 +24,7 @@
 
 ## Cite as
 
-[https://dx.doi.org/10.31219/osf.io/32fkd](10.31219/osf.io/32fkd)
+[DOI: 10.31219/osf.io/32fkd](https://dx.doi.org/10.31219/osf.io/32fkd)
 
 ```
 APA
