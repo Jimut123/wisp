@@ -1,25 +1,25 @@
+"""
+#   Copyright (c) 2019, Jimut Bahan Pal. All Rights Reserved.
+#
+#   Please refer to the GNU GENERAL PUBLIC LICENSE for more.
+#
+#   This is the application (probably simple) to find the location (almost any) in any Country 
+#   according to the choices of your preference. Uses Foursquare API to get the data (geojson).
+#   Please provide the Access key for the API, if bychance not given! This then creates a map to visualise the locations
+#   in a web browser, because Folium (leaflet.js) doesn't work in GUI or Terminal.
+#   
+#   Caution: Please don't blame me if this doesn't works, cause the data may not be present for 
+#            some location, since everyone will use free services of foursquare API.
+#
+#   e-mail : jimutbahanpal@yahoo.com
+#   website : https://jimut123.github.io
+#   Created for the purpose of final year project! :=> Almost data visualization project!
+#   
+#   Updated == version 2.0, uses JJ-Cluster custom made algorithm.
+#   Dated : 17-11-2019
+"""
 
-# tranforming json file into a pandas dataframe library
-from http.server import BaseHTTPRequestHandler, HTTPServer
-from pandas.io.json import json_normalize
-from folium.plugins import MarkerCluster
-from tempfile import NamedTemporaryFile
-from geopy.geocoders import Nominatim # module to convert an address into latitude and longitude values
-from IPython.core.display import HTML 
-from IPython.display import Image
-from datetime import datetime
-from tkinter import *
-import tkinter as tk
-import pandas as pd # library for data analsysis
-import numpy as np # library to handle data in a vectorized manner
-import subprocess
-import webbrowser
-import requests # library to handle requests
-import argparse
-import random # library for random number generation
-import folium # plotting library
-import json
-import os
+
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from geopy.geocoders import Nominatim # module to convert an address into latitude and longitude values
