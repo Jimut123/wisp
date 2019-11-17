@@ -73,6 +73,11 @@ $ python wisp_v2.py
 
 ***
 
+
+# Version : 1 stuffs!!
+
+
+
 ## Installation for version 1
 
 ```
