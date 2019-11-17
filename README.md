@@ -36,6 +36,13 @@ Pal, Jimut B. 2019. “How to Cluster Nearest Unique Nodes from Different Classe
 ```
 
 
+## Video 
+
+[![youtube-video](https://github.com/Jimut123/wisp/blob/master/img/wisp_v2.png)](https://www.youtube.com/watch?v=x6hf3kHQOlI)
+
+
+
+
 ## Usage for version - 2.0 (Supporting CLI only)
 
 ```
