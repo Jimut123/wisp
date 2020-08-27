@@ -13,20 +13,6 @@
                                 JIMUT(TM) 
 ```
 
-## Cite as
-
-[arXiv:2002.05886 [cs.HC]](https://arxiv.org/abs/2002.05886)
-
-```
-@misc{pal2020cluster,
-    title={How to cluster nearest unique nodes from different classes using JJCluster in Wisp application?},
-    author={Jimut Bahan Pal},
-    year={2020},
-    eprint={2002.05886},
-    archivePrefix={arXiv},
-    primaryClass={cs.HC}
-}
-```
 
 
 ## Video 
@@ -73,5 +59,19 @@ $ python wisp_v2.py
 
 ***
 
+## Cite as
 
+[arXiv:2002.05886 [cs.HC]](https://arxiv.org/abs/2002.05886)
+
+```
+@misc{pal2020cluster,
+    title={How to cluster nearest unique nodes from different classes using JJCluster in Wisp application?},
+    author={Jimut Bahan Pal},
+    year={2020},
+    eprint={2002.05886},
+    archivePrefix={arXiv},
+    primaryClass={cs.HC}
+}
+```
+***
 
