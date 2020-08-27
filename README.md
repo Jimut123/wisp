@@ -1,6 +1,3 @@
-# Wisp : A preference based location finder app 
-
-## Using [JJ-CLUSTER](https://jimut123.github.io/blogs/jjc_wisp.html)
 
 
 ```
@@ -15,9 +12,7 @@
 
 
 
-## Video 
-
-[![youtube-video](https://github.com/Jimut123/wisp/blob/master/img/wisp_v2.png)](https://www.youtube.com/watch?v=x6hf3kHQOlI)
+# Wisp : A preference based location finder app 
 
 
 
@@ -29,6 +24,14 @@ $ git clone https://github.com/Jimut123/wisp
 $ sudo pip install -r requirements.txt
 $ python wisp_v2.py
 ```
+
+
+## Using [JJ-CLUSTER](https://jimut123.github.io/blogs/jjc_wisp.html)
+
+
+## Video 
+
+[![youtube-video](https://github.com/Jimut123/wisp/blob/master/img/wisp_v2.png)](https://www.youtube.com/watch?v=x6hf3kHQOlI)
 
 
 
