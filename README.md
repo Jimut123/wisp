@@ -67,13 +67,19 @@ $ python wisp_v2.py
 [arXiv:2002.05886 [cs.HC]](https://arxiv.org/abs/2002.05886)
 
 ```
-@misc{pal2020cluster,
-    title={How to cluster nearest unique nodes from different classes using JJCluster in Wisp application?},
-    author={Jimut Bahan Pal},
-    year={2020},
-    eprint={2002.05886},
-    archivePrefix={arXiv},
-    primaryClass={cs.HC}
+@article{DBLP:journals/corr/abs-2002-05886,
+  author    = {Jimut Bahan Pal},
+  title     = {How to cluster nearest unique nodes from different classes using JJCluster
+               in Wisp application?},
+  journal   = {CoRR},
+  volume    = {abs/2002.05886},
+  year      = {2020},
+  url       = {https://arxiv.org/abs/2002.05886},
+  archivePrefix = {arXiv},
+  eprint    = {2002.05886},
+  timestamp = {Mon, 02 Mar 2020 16:46:06 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-2002-05886.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 ```
 ***
