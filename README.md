@@ -67,7 +67,7 @@ $ python wisp_v2.py
 
 ## Cite as
 
-[[cs.HC]https://arxiv.org/abs/2002.05886](https://arxiv.org/abs/2002.05886)
+[https://arxiv.org/abs/2002.05886](https://arxiv.org/abs/2002.05886)
 
 ```
 @article{DBLP:journals/corr/abs-2002-05886,
