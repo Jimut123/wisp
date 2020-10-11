@@ -67,7 +67,9 @@ $ python wisp_v2.py
 
 ## Documentations
 
-[abs/2002.05886 Paper](https://arxiv.org/abs/2002.05886) | [B.Sc. Thesis](https://jimut123.github.io/files/JBP_SCRIPTS/JBP_004.pdf) | [Old-Slide](https://github.com/Jimut123/wisp/blob/master/paper/wisp_ppt.pdf)
+[[abs/2002.05886 Paper](https://arxiv.org/abs/2002.05886) | [B.Sc. Thesis](https://jimut123.github.io/files/JBP_SCRIPTS/JBP_004.pdf) | [Old-Slide](https://github.com/Jimut123/wisp/blob/master/paper/wisp_ppt.pdf)]
+
+## BibTeX and citations
 
 ```
 @article{DBLP:journals/corr/abs-2002-05886,
