@@ -65,9 +65,23 @@ $ python wisp_v2.py
 
 ***
 
+
+
 ## Documentations
 
 [[abs/2002.05886 Paper](https://arxiv.org/abs/2002.05886) | [B.Sc. Thesis](https://jimut123.github.io/files/JBP_SCRIPTS/JBP_004.pdf) | [Old-Slide](https://github.com/Jimut123/wisp/blob/master/paper/wisp_ppt.pdf)]
+
+## LICENSE
+```
+ GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2019-20 Jimut Bahan Pal, <https://jimut123.github.io/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+```
+
+
 
 ## BibTeX and citations
 
