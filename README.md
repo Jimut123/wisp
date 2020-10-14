@@ -19,7 +19,7 @@
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Build Status](https://travis-ci.org/freeCodeCamp/how-to-contribute-to-open-source.svg?branch=master)](https://travis-ci.org/freeCodeCamp/how-to-contribute-to-open-source)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3254836.svg)](https://doi.org/10.5281/zenodo.3254836)
-[<img src="https://raw.githubusercontent.com/Jimut123/wisp/master/pwc.svg" height="10" width="10">](https://paperswithcode.com/paper/how-to-cluster-nearest-unique-nodes-from)
+[<img src="https://raw.githubusercontent.com/Jimut123/wisp/master/pwc.svg" height="30" width="40"> Papers With Code](https://paperswithcode.com/paper/how-to-cluster-nearest-unique-nodes-from)
 
 ## Usage for version - 2.0 (Supporting CLI only)
 
