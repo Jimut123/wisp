@@ -20,6 +20,7 @@
 [![Build Status](https://travis-ci.org/freeCodeCamp/how-to-contribute-to-open-source.svg?branch=master)](https://travis-ci.org/freeCodeCamp/how-to-contribute-to-open-source)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3254836.svg)](https://doi.org/10.5281/zenodo.3254836)
 [<img src="https://raw.githubusercontent.com/Jimut123/wisp/master/pwc.svg" height="30" width="40"> Papers With Code](https://paperswithcode.com/paper/how-to-cluster-nearest-unique-nodes-from)
+[![arXiv](http://img.shields.io/badge/arXiv-2002.05886-B31B1B.svg)](https://arxiv.org/abs/2002.05886)
 
 ## Usage for version - 2.0 (Supporting CLI only)
 
