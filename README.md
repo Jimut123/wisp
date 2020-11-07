@@ -34,6 +34,11 @@ $ python wisp_v2.py
 ## Using [JJ-CLUSTER](https://jimut123.github.io/blogs/jjc_wisp.html)
 
 
+## Documentations
+
+[[abs/2002.05886 Research paper](https://arxiv.org/abs/2002.05886) | [B.Sc. Thesis](https://jimut123.github.io/files/JBP_SCRIPTS/JBP_004.pdf) | [Old-Slide](https://github.com/Jimut123/wisp/blob/master/paper/wisp_ppt.pdf)]
+
+
 ## Video 
 
 [![youtube-video](https://github.com/Jimut123/wisp/blob/master/img/wisp_v2.png)](https://www.youtube.com/watch?v=x6hf3kHQOlI)
@@ -67,11 +72,6 @@ $ python wisp_v2.py
 
 ***
 
-
-
-## Documentations
-
-[[abs/2002.05886 Research paper](https://arxiv.org/abs/2002.05886) | [B.Sc. Thesis](https://jimut123.github.io/files/JBP_SCRIPTS/JBP_004.pdf) | [Old-Slide](https://github.com/Jimut123/wisp/blob/master/paper/wisp_ppt.pdf)]
 
 ## [LICENSE](https://github.com/Jimut123/wisp/blob/master/LICENSE)
 ```
