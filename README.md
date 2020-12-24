@@ -22,6 +22,12 @@
 [<img src="https://raw.githubusercontent.com/Jimut123/wisp/master/pwc.svg" height="30" width="40"> Papers With Code](https://paperswithcode.com/paper/how-to-cluster-nearest-unique-nodes-from)
 [![arXiv](http://img.shields.io/badge/arXiv-2002.05886-B31B1B.svg)](https://arxiv.org/abs/2002.05886)
 
+
+## Abstract
+
+The work of finding the best place according to user preference is a tedious task. It needs manual research and lot of intuitive process to find the best location according to some earlier knowledge about the place. It is mainly about accessing publicly available spatial data, applying a simple algorithm to summarize the data according to given preferences, and visualizing the result on a map. We introduced JJCluster to eliminate the rigorous way of researching about a place and visualizing the location in real time. This algorithm successfully finds the heart of a city when used in Wisp application. The main purpose of designing Wisp application is used for finding the perfect location for a trip to unknown place which is nearest to a set of preferences. We also discussed the various optimization algorithms that are pioneer of today's dynamic programming and the need for visualization to find patterns when the data is cluttered. Yet, this general clustering algorithm can be used in other areas where we can explore every possible preference to maximize its utility. 
+
+
 ## Usage for version - 2.0 (Supporting CLI only)
 
 ```
