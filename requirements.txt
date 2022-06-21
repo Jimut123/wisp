@@ -2,7 +2,7 @@ requests==2.21.0
 pandas==0.24.1
 folium==0.7.0
 geopy==1.18.1
-numpy==1.16.1
+numpy==1.22.0
 wget==3.2
 datetime
 IPython
