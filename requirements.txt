@@ -1,4 +1,4 @@
-requests==2.21.0
+requests==2.31.0
 pandas==0.24.1
 folium==0.7.0
 geopy==1.18.1
